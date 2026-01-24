@@ -52,16 +52,17 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Physics Notes}
+\lhead{AP Physics C: E\&M}
 \rhead{\leftmark}
 \cfoot{\thepage}
+\setlength{\headheight}{14pt}
 
 % ---------- Handy macros ----------
 % Vectors: prefer bold vectors in physics notes
 % (physics package already gives \vb{v} etc.)
 
 % Common derivatives shortcuts (optional wrappers)
-\newcommand{\dd}{\mathrm{d}}
+% \dd is already defined by the physics package
 \newcommand{\ee}{\mathrm{e}}
 
 % Expectation / averages (physics already has \expval)
@@ -71,8 +72,8 @@
 \newcommand{\key}[1]{\begin{center}\fbox{\parbox{0.92\linewidth}{#1}}\end{center}}
 
 % ---------- Title ----------
-\title{Physics C Notes}
-\author{(Your Name)}
+\title{AP Physics C: E\&M}
+\author{(Miso Park)}
 \date{\today}
 
 \begin{document}

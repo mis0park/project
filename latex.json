@@ -1,0 +1,215 @@
+{
+  "Fraction": {
+    "prefix": "ff",
+    "body": "\\frac{${1}}{${2}}",
+    "description": "Fraction",
+    "category": "Expressions"
+  },
+  "D-Fraction": {
+    "prefix": "ffd",
+    "body": "\\dfrac{${1}}{${2}}",
+    "description": "Display fraction",
+    "category": "Expressions"
+  },
+  "C-Fraction": {
+    "prefix": "ffc",
+    "body": "\\cfrac{${1}}{${2}}",
+    "description": "Continued fraction",
+    "category": "Expressions"
+  },
+  "Sum": {
+    "prefix": "sum",
+    "body": "\\sum_{${1:i}=1}^{${2:n}}",
+    "description": "Summation",
+    "category": "Expressions"
+  },
+  "Integral": {
+    "prefix": "int",
+    "body": "\\int_{${1:a}}^{${2:b}} ${3:f(x)}\\,dx",
+    "description": "Integral",
+    "category": "Expressions"
+  },
+
+  "Equation* environment (default)": {
+    "prefix": "eq",
+    "body": [
+      "\\begin{equation*}",
+      "  ${1}",
+      "\\end{equation*}"
+    ],
+    "description": "equation* (unnumbered)",
+    "category": "Environments"
+  },
+  "Equation environment (numbered)": {
+    "prefix": "eqn",
+    "body": [
+      "\\begin{equation}",
+      "  ${1}",
+      "\\end{equation}"
+    ],
+    "description": "equation (numbered)",
+    "category": "Environments"
+  },
+
+  "Align* environment (default)": {
+    "prefix": "al",
+    "body": [
+      "\\begin{align*}",
+      "  ${1}",
+      "\\end{align*}"
+    ],
+    "description": "align* (unnumbered)",
+    "category": "Environments"
+  },
+  "Align environment (numbered)": {
+    "prefix": "aln",
+    "body": [
+      "\\begin{align}",
+      "  ${1}",
+      "\\end{align}"
+    ],
+    "description": "align (numbered)",
+    "category": "Environments"
+  },
+  "Aligned (inside equation)": {
+    "prefix": "ald",
+    "body": [
+      "\\begin{aligned}",
+      "  ${1}",
+      "\\end{aligned}"
+    ],
+    "description": "aligned (use inside equation/equation*)",
+    "category": "Environments"
+  },
+
+  "Proof": {
+    "prefix": "pf",
+    "body": [
+      "\\begin{proof}",
+      "  ${1}",
+      "\\end{proof}"
+    ],
+    "description": "Proof environment",
+    "category": "Environments"
+  },
+  "Theorem": {
+    "prefix": "thm",
+    "body": [
+      "\\begin{theorem}",
+      "  ${1}",
+      "\\end{theorem}"
+    ],
+    "description": "Theorem environment",
+    "category": "Environments"
+  },
+
+  "Derivative dv": {
+    "prefix": "dv",
+    "body": ["\\\\dv{${1:f}}{${2:x}}"],
+    "description": "Total derivative (physics pkg)",
+    "category": "Expressions"
+  },
+  "Second derivative dv2": {
+    "prefix": "dv2",
+    "body": ["\\\\dv[2]{${1:f}}{${2:x}}"],
+    "description": "2nd total derivative",
+    "category": "Expressions"
+  },
+  "Partial derivative pdv": {
+    "prefix": "pdv",
+    "body": ["\\\\pdv{${1:f}}{${2:x}}"],
+    "description": "Partial derivative (physics pkg)",
+    "category": "Expressions"
+  },
+
+  "Vector bold vb": {
+    "prefix": "vb",
+    "body": ["\\\\vb{${1:v}}"],
+    "description": "Bold vector (physics pkg)",
+    "category": "Vectors"
+  },
+  "Dot product": {
+    "prefix": "dot",
+    "body": ["${1:\\\\vb{A}}\\\\cdot ${2:\\\\vb{B}}"],
+    "description": "Dot product",
+    "category": "Vectors"
+  },
+  "Cross product": {
+    "prefix": "cross",
+    "body": ["${1:\\\\vb{A}}\\\\times ${2:\\\\vb{B}}"],
+    "description": "Cross product",
+    "category": "Vectors"
+  },
+
+  "Auto-size parentheses qty": {
+    "prefix": "qty",
+    "body": ["\\\\qty(${1})"],
+    "description": "Auto-sized delimiters (physics pkg)",
+    "category": "Formatting"
+  },
+
+  "SI unit value": {
+    "prefix": "si",
+    "body": ["\\\\SI{${1:9.8}}{${2:m/s^2}}"],
+    "description": "SI value + unit (siunitx)",
+    "category": "Units"
+  },
+
+  "TikZ picture": {
+    "prefix": "tz",
+    "body": [
+      "\\begin{tikzpicture}[>=Latex]",
+      "  ${1}",
+      "\\end{tikzpicture}"
+    ],
+    "description": "tikzpicture env",
+    "category": "Diagrams"
+  },
+  "circuitikz environment": {
+    "prefix": "ctz",
+    "body": [
+      "\\begin{circuitikz}",
+      "  ${1}",
+      "\\end{circuitikz}"
+    ],
+    "description": "circuitikz env",
+    "category": "Diagrams"
+  },
+
+  "Free-body diagram starter": {
+    "prefix": "fbd",
+    "body": [
+      "\\begin{tikzpicture}[>=Latex]",
+      "  \\\\draw[thick] (-1,0) -- (3,0);",
+      "  \\\\draw[thick] (0,0) rectangle (2,1);",
+      "  \\\\draw[->] (1,1) -- (1,2) node[above] {$N$};",
+      "  \\\\draw[->] (1,0) -- (1,-1) node[below] {$mg$};",
+      "  \\\\draw[->] (2,0.5) -- (3,0.5) node[right] {$F$};",
+      "\\end{tikzpicture}"
+    ],
+    "description": "Quick FBD skeleton",
+    "category": "Diagrams"
+  },
+
+  "sym{} (short)": {
+    "prefix": "sy",
+    "body": ["\\\\sym{${1:I}}"],
+    "description": "Linked base symbol (requires \\sym macro)",
+    "category": "Symbols"
+  },
+  "symsub{} (short)": {
+    "prefix": "ss",
+    "body": ["\\\\symsub{${1:I}}{${2:avg}}"],
+    "description": "Linked subscripted symbol",
+    "category": "Symbols"
+  },
+
+  "Symbol table row (anchored)": {
+    "prefix": "symrow",
+    "body": [
+      "${1:Name} & \\\\hypertarget{sym:${2:I}}{$$${2:I}$$} & ${3:Meaning/definition} & \\\\si{${4:}} & ${5:Common subscripts: avg, rms, 0, eq} \\\\"
+    ],
+    "description": "Adds an anchor so \\sym{I} links to it",
+    "category": "Symbols"
+  }
+}
