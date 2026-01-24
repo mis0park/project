@@ -8,8 +8,12 @@ Generate README snippet tables from VS Code snippets in latex.json.
     <!-- SNIPPETS:START -->
     <!-- SNIPPETS:END -->
 
-Fixes the common Windows regex issue where LaTeX backslashes (e.g. \cfrac)
-break re.sub replacement strings by using a FUNCTION replacement.
+Preserves:
+- CATEGORY_ORDER for category sections
+- Original latex.json order *within each category*
+
+Fixes Windows regex replacement issues with LaTeX backslashes by using a
+FUNCTION replacement for re.sub.
 """
 
 from __future__ import annotations
@@ -57,13 +61,22 @@ def esc_cell(s: str) -> str:
     return s.replace("|", r"\|").strip()
 
 
-def load_snippets() -> dict[str, list[dict[str, str]]]:
+def load_snippets() -> tuple[dict[str, list[dict[str, str]]], list[str]]:
+    """
+    Returns:
+      - groups: category -> list of snippets (in the same order as latex.json)
+      - category_seen_order: categories in the order they first appear in latex.json
+    """
     if not SNIPPETS_PATH.exists():
         raise SystemExit(f"Missing snippets file: {SNIPPETS_PATH.resolve()}")
 
     data = json.loads(SNIPPETS_PATH.read_text(encoding="utf-8"))
-    groups: dict[str, list[dict[str, str]]] = defaultdict(list)
 
+    groups: dict[str, list[dict[str, str]]] = defaultdict(list)
+    category_seen_order: list[str] = []
+    seen = set()
+
+    # IMPORTANT: dict iteration preserves JSON order (Python 3.7+)
     for name, snip in data.items():
         prefix = str(snip.get("prefix", "")).strip()
         desc = (snip.get("description") or str(name)).strip()
@@ -71,21 +84,19 @@ def load_snippets() -> dict[str, list[dict[str, str]]]:
         body = body_to_str(snip.get("body", ""))
 
         if not prefix:
-            # skip malformed snippets with no prefix
             continue
 
-        groups[cat].append(
-            {"prefix": prefix, "desc": desc, "body": body}
-        )
+        if cat not in seen:
+            seen.add(cat)
+            category_seen_order.append(cat)
 
-    # sort within each category by prefix length then alphabetically
-    for cat in list(groups.keys()):
-        groups[cat].sort(key=lambda x: (len(x["prefix"]), x["prefix"]))
+        groups[cat].append({"prefix": prefix, "desc": desc, "body": body})
 
-    return groups
+    # NO SORTING — preserves latex.json order within each category
+    return groups, category_seen_order
 
 
-def make_md(groups: dict[str, list[dict[str, str]]]) -> str:
+def make_md(groups: dict[str, list[dict[str, str]]], category_seen_order: list[str]) -> str:
     out: list[str] = []
     used: set[str] = set()
 
@@ -95,21 +106,19 @@ def make_md(groups: dict[str, list[dict[str, str]]]) -> str:
         out.append("|------|-----------|-----------|")
         for s in items:
             exp = compact_for_table(s["body"])
-            out.append(
-                f"| `{esc_cell(s['prefix'])}` | `{esc_cell(exp)}` | {esc_cell(s['desc'])} |"
-            )
+            out.append(f"| `{esc_cell(s['prefix'])}` | `{esc_cell(exp)}` | {esc_cell(s['desc'])} |")
         out.append("")
 
-    # ordered categories first
+    # 1) Emit categories in your preferred order first
     for cat in CATEGORY_ORDER:
         if cat in groups and groups[cat]:
             emit_category(cat, groups[cat])
             used.add(cat)
 
-    # anything else (typos/new categories)
-    leftovers = [c for c in groups.keys() if c not in used]
+    # 2) Emit any remaining categories (typos/new categories) in the order they appear in latex.json
+    leftovers = [c for c in category_seen_order if c not in used]
     if leftovers:
-        emit_category("Uncategorized", [s for c in sorted(leftovers) for s in groups[c]])
+        emit_category("Uncategorized", [s for c in leftovers for s in groups[c]])
 
     return "\n".join(out).strip() + "\n"
 
@@ -122,8 +131,7 @@ def replace_block(readme_text: str, new_block: str) -> str:
             "Add them where you want the generated tables to appear."
         )
 
-    # CRITICAL FIX:
-    # Use a function replacement so LaTeX backslashes (e.g. \cfrac, \begin) are inserted literally.
+    # Use a function replacement so LaTeX backslashes are inserted literally.
     return pattern.sub(lambda _m: f"{START}\n\n{new_block}\n{END}", readme_text, count=1)
 
 
@@ -131,8 +139,8 @@ def main() -> None:
     if not README_PATH.exists():
         raise SystemExit(f"Missing README file: {README_PATH.resolve()}")
 
-    groups = load_snippets()
-    md = make_md(groups)
+    groups, category_seen_order = load_snippets()
+    md = make_md(groups, category_seen_order)
 
     readme = README_PATH.read_text(encoding="utf-8")
     updated = replace_block(readme, md)

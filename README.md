@@ -4,25 +4,25 @@
 
 | Prefix | Expands to | What it is |
 |------|-----------|-----------|
-| `dv` | `\\dv{${1:f}}{${2:x}}` | Total derivative (physics pkg) |
 | `ff` | `\frac{${1}}{${2}}` | Fraction |
-| `dv2` | `\\dv[2]{${1:f}}{${2:x}}` | 2nd total derivative |
-| `ffc` | `\cfrac{${1}}{${2}}` | Continued fraction |
 | `ffd` | `\dfrac{${1}}{${2}}` | Display fraction |
-| `int` | `\int_{${1:a}}^{${2:b}} ${3:f(x)}\,dx` | Integral |
-| `pdv` | `\\pdv{${1:f}}{${2:x}}` | Partial derivative (physics pkg) |
+| `ffc` | `\cfrac{${1}}{${2}}` | Continued fraction |
 | `sum` | `\sum_{${1:i}=1}^{${2:n}}` | Summation |
+| `int` | `\int_{${1:a}}^{${2:b}} ${3:f(x)}\,dx` | Integral |
+| `dv` | `\\dv{${1:f}}{${2:x}}` | Total derivative (physics pkg) |
+| `dv2` | `\\dv[2]{${1:f}}{${2:x}}` | 2nd total derivative |
+| `pdv` | `\\pdv{${1:f}}{${2:x}}` | Partial derivative (physics pkg) |
 
 ## Environments
 
 | Prefix | Expands to | What it is |
 |------|-----------|-----------|
-| `al` | `\begin{align*}\n ${1}\n\end{align*}` | align* (unnumbered) |
 | `eq` | `\begin{equation*}\n ${1}\n\end{equation*}` | equation* (unnumbered) |
-| `pf` | `\begin{proof}\n ${1}\n\end{proof}` | Proof environment |
-| `ald` | `\begin{aligned}\n ${1}\n\end{aligned}` | aligned (use inside equation/equation*) |
-| `aln` | `\begin{align}\n ${1}\n\end{align}` | align (numbered) |
 | `eqn` | `\begin{equation}\n ${1}\n\end{equation}` | equation (numbered) |
+| `al` | `\begin{align*}\n ${1}\n\end{align*}` | align* (unnumbered) |
+| `aln` | `\begin{align}\n ${1}\n\end{align}` | align (numbered) |
+| `ald` | `\begin{aligned}\n ${1}\n\end{aligned}` | aligned (use inside equation/equation*) |
+| `pf` | `\begin{proof}\n ${1}\n\end{proof}` | Proof environment |
 | `thm` | `\begin{theorem}\n ${1}\n\end{theorem}` | Theorem environment |
 
 ## Formatting
@@ -49,8 +49,8 @@
 
 | Prefix | Expands to | What it is |
 |------|-----------|-----------|
-| `ss` | `\\symsub{${1:I}}{${2:avg}}` | Linked subscripted symbol |
 | `sy` | `\\sym{${1:I}}` | Linked base symbol (requires \sym macro) |
+| `ss` | `\\symsub{${1:I}}{${2:avg}}` | Linked subscripted symbol |
 | `symrow` | `${1:Name} & \\hypertarget{sym:${2:I}}{$$${2:I}$$} & ${3:Meaning/definition} & \\si{${4:}} & ${5:Common subscripts: avg, rms, 0, eq} \\` | Adds an anchor so \sym{I} links to it |
 
 ## Diagrams
