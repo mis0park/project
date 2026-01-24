@@ -1,0 +1,17 @@
+# LaTeX build junk
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# latex-workshop
+.vscode/.latex-workshop/
