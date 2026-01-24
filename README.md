@@ -3,13 +3,13 @@
 ## Expressions
 
 | Prefix | Expands to | What it is |
-|------|-----------|-----------|
-| `ff` | `\frac{${1}}{${2}}` | Fraction |
+|--------|-------------|-----------|
+| `ff`  | `\frac{${1}}{${2}}` | Fraction |
 | `ffd` | `\dfrac{${1}}{${2}}` | Display fraction |
 | `ffc` | `\cfrac{${1}}{${2}}` | Continued fraction |
 | `sum` | `\sum_{${1:i}=1}^{${2:n}}` | Summation |
 | `int` | `\int_{${1:a}}^{${2:b}} ${3:f(x)}\,dx` | Integral |
-| `dv` | `\\dv{${1:f}}{${2:x}}` | Total derivative (physics pkg) |
+| `dv`  | `\\dv{${1:f}}{${2:x}}` | Total derivative (physics pkg) |
 | `dv2` | `\\dv[2]{${1:f}}{${2:x}}` | 2nd total derivative |
 | `pdv` | `\\pdv{${1:f}}{${2:x}}` | Partial derivative (physics pkg) |
 
