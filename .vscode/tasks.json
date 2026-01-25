@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Update README (snippets)",
+      "type": "shell",
+      "command": "python gen_readme_snippets.py",
+      "problemMatcher": []
+    }
+  ]
+}
