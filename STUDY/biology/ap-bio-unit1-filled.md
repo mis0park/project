@@ -1,10 +1,9 @@
-# AP Biology — Unit 1: Chemistry of Life (Filled Notes, CED-Expanded)
+# AP Biology — Unit 1: Chemistry of Life
 
 > **Unit 1 focus (how College Board tests it)**
 > - Chemical properties → biological function
 > - **Structure → function** at the molecular level
 > - Energy storage, information storage, and system stability begin with chemistry
-> - Explanations matter more than naming
 
 Legend:
 - **→** causes/leads to
@@ -26,17 +25,16 @@ Legend:
 
 ## Topic 1.1 — Structure of Water and Hydrogen Bonding
 
-### You Must Be Able To (CED verbs)
+### You Must Be Able To
 - Identify properties of water
 - Describe hydrogen bonding
 - Explain how water’s properties support life
 - Predict effects of disrupting hydrogen bonds
 
 ### Essential Knowledge 1.1.A
-
 **EK 1.1.A.1 Polarity and hydrogen bonding**
-- Water is polar due to unequal electron sharing between oxygen and hydrogen.
-- Partial charges allow **hydrogen bonds** to form between molecules.
+- Water is **polar** due to unequal electron sharing between oxygen and hydrogen.
+- Partial charges (polarity) allow **hydrogen bonding** between molecules.
 - Hydrogen bonding gives water high specific heat capacity and high heat of vaporization.
 
 **Biological consequences (cause → effect)**
@@ -48,6 +46,8 @@ Legend:
   - Cohesion (water–water attraction)
   - Adhesion (water–other polar surfaces)
   - Surface tension (resistance at surface)
+  - High specific heat
+  - High heat of vaporization
 
 **CED extension (still Unit 1–legal)**
 - Polar and charged substances interact favorably with water (**hydrophilic**).
@@ -56,15 +56,49 @@ Legend:
 
 ---
 
+## Topic 1.2 — Elements of Life
+
+### You Must Be Able To
+- Identify elements required by living systems
+- Explain why carbon is uniquely suited for biological macromolecules
+
+### Essential Knowledge
+- Living systems require elements from the environment.
+- Carbon forms **four covalent bonds**, enabling complex, diverse molecules.
+
+| Element | Primary biological role              |
+|---------|--------------------------------------|
+| C       | Backbone of organic molecules        |
+| H       | Energy transfer; polarity            |
+| O       | Polarity; respiration                |
+| N       | Proteins; nucleic acids              |
+| P       | ATP; nucleic acids; phospholipids    |
+| S       | Protein structure (disulfide bonds)  |
+
+**CED reasoning**
+- Carbon’s bonding versatility → molecular diversity → functional complexity
+
+---
+
 ## Topic 1.3 — Introduction to Biological Macromolecules
 
+### You Must Be Able To
+- Describe dehydration synthesis and hydrolysis
+- Relate these reactions to polymer formation/breakdown
+
 ### Essential Knowledge 1.3.A
-- Biological macromolecules are formed from smaller subunits (monomers).
-- Covalent bonds link monomers to form polymers.
+- Macromolecules are built from **monomers**.
+- Monomers are linked by **covalent bonds**.
 
 **Reactions**
-- **Dehydration synthesis**: forms polymers; releases H₂O
+- **Dehydration synthesis**: builds polymers; releases H₂O
 - **Hydrolysis**: breaks polymers; uses H₂O
+
+**Reactions**
+- Dehydration synthesis → builds polymers; releases H₂O
+- Hydrolysis → breaks polymers; uses H₂O
+
+<!-- TikZ Diagram: Dehydration vs Hydrolysis -->
 
 **CED framing**
 - These reactions are **reversible**.
@@ -79,7 +113,7 @@ Legend:
 - The shape of a molecule determines its interactions with other molecules.
 
 ```text
-| Macromolecule | Monomer         | Primary functions                     |
+| Macromolecule | Monomer         | Primary functions                    |
 |---------------|-----------------|--------------------------------------|
 | Carbohydrate  | Monosaccharide  | Energy storage; structural support   |
 | Lipid         | Fatty acids     | Energy storage; membranes; signaling |
@@ -89,7 +123,7 @@ Legend:
 
 ---
 
-## Topic 1.5 — Structure and Function of Carbohydrates (Expanded)
+## Topic 1.5 — Structure and Function of Carbohydrates
 
 ### Essential Knowledge 1.5.A
 - Carbohydrates consist of monosaccharides linked by **glycosidic bonds**.
@@ -104,7 +138,7 @@ Legend:
   - Form straight, rigid fibers → structural support
 
 ```text
-| Polymer     | Linkage type | Function                    |
+| Polymer    | Linkage type | Function                    |
 |------------|--------------|-----------------------------|
 | Starch     | α            | Energy storage (plants)     |
 | Glycogen   | α (branched) | Rapid energy release        |
@@ -116,7 +150,7 @@ Legend:
 
 ---
 
-## Topic 1.6 — Structure and Function of Lipids (Expanded)
+## Topic 1.6 — Structure and Function of Lipids
 
 ### Essential Knowledge 1.6.A
 - Lipids are hydrophobic due to nonpolar hydrocarbon chains.
@@ -131,11 +165,13 @@ Legend:
   - Kinks → less packing → liquid at room temperature
 
 ```text
-| Feature        | Saturated          | Unsaturated        |
-|---------------|--------------------|--------------------|
-| Double bonds  | None               | ≥1                 |
-| Shape         | Straight           | Bent               |
-| State @ RT    | Solid              | Liquid             |
+| Feature             | Saturated     | Unsaturated   |
+|---------------------|---------------|---------------|
+| Double bonds (cis)  | None          | ≥1            |
+| Chain Shape (kinks) | Straight      | Bent          |
+| Packing             | Loose         | Tight         |
+| State @ RT          | Solid         | Liquid        |
+| Membrane fluidity   | Decreases     | Increases     |
 ```
 
 ### Phospholipids (CED emphasis)
@@ -150,19 +186,19 @@ Legend:
 
 ---
 
-## Topic 1.7 — Structure and Function of Proteins (Expanded)
+## Topic 1.7 — Structure and Function of Proteins
 
 ### Essential Knowledge 1.7.A
 - Proteins are polymers of amino acids joined by **peptide bonds**.
 - Amino acid **R groups** determine folding and function.
 
 ```text
-| Level       | Description                                   | Stabilized by                          |
-|------------|-----------------------------------------------|----------------------------------------|
-| Primary    | Linear amino acid sequence                    | Peptide bonds                          |
-| Secondary  | α-helix, β-pleated sheet                      | Hydrogen bonds (backbone)              |
-| Tertiary   | Overall 3D shape                              | R-group interactions                   |
-| Quaternary | Multiple polypeptides                         | R-group interactions                   |
+| Level      | Description                 | Stabilized by              | Structure change?  |
+|------------|-----------------------------|----------------------------|--------------------|
+| Primary    | Linear amino acid sequence  | Peptide bonds              | Rarely disrupted   |
+| Secondary  | α-helix, β-pleated sheet    | Hydrogen bonds (backbone)  | Can be disrupted   |
+| Tertiary   | Overall 3D structure        | R-group interactions       | Easily disrupted   |
+| Quaternary | Multiple polypeptides       | R-group interactions       | Easily disrupted   |
 ```
 
 **Denaturation**
@@ -172,7 +208,7 @@ Legend:
 
 ---
 
-## Topic 1.8 — Structure and Function of Nucleic Acids (Expanded)
+## Topic 1.8 — Structure and Function of Nucleic Acids
 
 ### Essential Knowledge 1.8.A
 - Nucleic acids store and transmit genetic information.
@@ -184,10 +220,10 @@ Legend:
 
 ```text
 | Feature | DNA          | RNA          |
-|--------|--------------|--------------|
-| Sugar  | Deoxyribose  | Ribose       |
-| Base   | Thymine      | Uracil       |
-| Strands| Double       | Single       |
+|---------|--------------|--------------|
+| Sugar   | Deoxyribose  | Ribose       |
+| Base    | Thymine      | Uracil       |
+| Strands | Double       | Single       |
 ```
 
 **CED reasoning**
