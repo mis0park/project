@@ -1,0 +1,117 @@
+
+---
+
+## 2) `ap-bio-unit1-tikz-diagrams.tex`  (compact + vertical)
+
+```latex
+\documentclass[border=8pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+% Global compact styling
+\tikzset{
+  compact/.style={
+    every node/.style={font=\small, inner sep=1.2pt},
+    line width=0.8pt
+  }
+}
+
+\begin{document}
+
+% =========================
+% 1) Water polarity + hydrogen bond (compact)
+% =========================
+\begin{tikzpicture}[compact, scale=0.9, transform shape]
+  \node (O1) at (0,0) {O$^{\delta-}$};
+  \node (H1a) at (-0.7,-0.5) {H$^{\delta+}$};
+  \node (H1b) at (0.7,-0.5) {H$^{\delta+}$};
+  \draw (O1) -- (H1a);
+  \draw (O1) -- (H1b);
+
+  \node (O2) at (2.2,0.15) {O$^{\delta-}$};
+  \node (H2a) at (1.6,-0.45) {H$^{\delta+}$};
+  \node (H2b) at (2.8,-0.45) {H$^{\delta+}$};
+  \draw (O2) -- (H2a);
+  \draw (O2) -- (H2b);
+
+  \draw[densely dotted, thick] (H1b) -- node[above] {H-bond} (O2);
+
+  \node at (0,-1.25) {\scriptsize polar covalent bonds};
+  \node at (2.2,-1.25) {\scriptsize intermolecular attraction};
+\end{tikzpicture}
+
+\par\bigskip
+
+% =========================
+% 2) Dehydration vs Hydrolysis (compact)
+% =========================
+\begin{tikzpicture}[compact, >=Latex, scale=0.85, transform shape]
+  % Dehydration row
+  \node (m1) [draw, rounded corners, minimum width=14mm, minimum height=6mm] at (0,0) {Monomer};
+  \node (plus) at (1.6,0) {+};
+  \node (m2) [draw, rounded corners, minimum width=14mm, minimum height=6mm] at (3.2,0) {Monomer};
+
+  \draw[->, thick] (4.2,0) -- node[above] {\scriptsize Dehydration} (5.8,0);
+
+  \node (poly) [draw, rounded corners, minimum width=18mm, minimum height=6mm] at (7.3,0) {Polymer};
+  \node (water) at (9.0,0) {+ H$_2$O};
+
+  % Hydrolysis row
+  \node (poly2) [draw, rounded corners, minimum width=18mm, minimum height=6mm] at (1.0,-1.2) {Polymer};
+  \node (plus2) at (2.5,-1.2) {+};
+  \node (water2) at (3.6,-1.2) {H$_2$O};
+
+  \draw[->, thick] (4.2,-1.2) -- node[above] {\scriptsize Hydrolysis} (5.8,-1.2);
+
+  \node (m3) [draw, rounded corners, minimum width=14mm, minimum height=6mm] at (7.0,-1.2) {Monomer};
+  \node (plus3) at (8.6,-1.2) {+};
+  \node (m4) [draw, rounded corners, minimum width=14mm, minimum height=6mm] at (10.2,-1.2) {Monomer};
+\end{tikzpicture}
+
+\par\bigskip
+
+% =========================
+% 3) General amino acid structure (compact)
+% =========================
+\begin{tikzpicture}[compact, scale=0.95, transform shape]
+  \node (C) at (0,0) {C};
+  \draw (C) -- (0,1.0) node[above] {H};
+  \draw (C) -- (-1.3,0) node[left] {NH$_2$};
+  \draw (C) -- (1.3,0) node[right] {COOH};
+  \draw (C) -- (0,-1.0) node[below] {R group};
+
+  \node at (0,-1.6) {\scriptsize R group $\rightarrow$ folding $\rightarrow$ function};
+\end{tikzpicture}
+
+\par\bigskip
+
+% =========================
+% 4) Linear vs branched polysaccharide (compact)
+% =========================
+\begin{tikzpicture}[compact, scale=0.9, transform shape]
+  % Linear
+  \node[font=\small\bfseries] at (0,1.6) {Linear polymer};
+  \foreach \i in {0,...,5} {
+    \node[draw, circle, minimum size=4.8mm] (L\i) at (\i*0.8,1.0) {};
+    \ifnum\i>0
+      \draw (L\the\numexpr\i-1\relax) -- (L\i);
+    \fi
+  }
+
+  % Branched
+  \node[font=\small\bfseries] at (0,-0.1) {Branched polymer};
+  \foreach \i in {0,...,5} {
+    \node[draw, circle, minimum size=4.8mm] (B\i) at (\i*0.8,-0.7) {};
+    \ifnum\i>0
+      \draw (B\the\numexpr\i-1\relax) -- (B\i);
+    \fi
+  }
+  \node[draw, circle, minimum size=4.8mm] (Br1) at (2.4,-1.35) {};
+  \node[draw, circle, minimum size=4.8mm] (Br2) at (2.4,-2.0) {};
+  \draw (B3) -- (Br1) -- (Br2);
+
+  \node at (2.4,-2.45) {\scriptsize Branching $\rightarrow$ faster access};
+\end{tikzpicture}
+
+\end{document}
