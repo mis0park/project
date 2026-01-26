@@ -14,12 +14,11 @@ Legend:
 ## Unit 1 Map (CED topic sequence)
 - 1.1 Structure of Water and Hydrogen Bonding
 - 1.2 Elements of Life
-- 1.3 Introduction to Biological Macromolecules
-- 1.4 Properties of Biological Macromolecules
-- 1.5 Structure and Function of Carbohydrates
-- 1.6 Structure and Function of Lipids
-- 1.7 Structure and Function of Proteins
-- 1.8 Structure and Function of Nucleic Acids
+- 1.3 Introduction to Macromolecules
+- 1.4 Carbohydrates
+- 1.5 Lipids
+- 1.6 Nucleic Acids
+- 1.7 Proteins
 
 ---
 
@@ -28,12 +27,14 @@ Legend:
 ### You Must Be Able To
 - Identify properties of water
 - Describe hydrogen bonding
-- Explain how water’s properties support life
+- Explain how water’s properties affect water's biological function
 - Predict effects of disrupting hydrogen bonds
 
 ### Essential Knowledge 1.1.A
+
 **EK 1.1.A.1 Polarity and hydrogen bonding**
 - Water is **polar** due to unequal electron sharing between oxygen and hydrogen.
+  - Polar covalent bonds are formed between Hydrogen and Oxygen 
 - Partial charges (polarity) allow **hydrogen bonding** between molecules.
 - Hydrogen bonding gives water high specific heat capacity and high heat of vaporization.
 
@@ -49,14 +50,14 @@ Legend:
   - High specific heat
   - High heat of vaporization
 
-**CED extension (still Unit 1–legal)**
+**CED extension**
 - Polar and charged substances interact favorably with water (**hydrophilic**).
 - Nonpolar substances do not interact favorably with water (**hydrophobic**).
 - Hydrophobic interactions contribute to membrane formation and protein folding.
 
 ---
 
-## Topic 1.2 — Elements of Life
+## Topic 1.2 — Elements of Life 
 
 ### You Must Be Able To
 - Identify elements required by living systems
