@@ -1,4 +1,11 @@
- 
+
+# UNIT 1 Kinematics
+
+- TOPIC 1.1 Scalars and Vectors  
+- TOPIC 1.2 Displacement, Velocity, and Acceleration 
+- TOPIC 1.3 Representing Motion  
+- TOPIC 1.4 Reference Frames and Relative Motion  
+- TOPIC 1.5 Motion in Two or Three Dimensions  
 
 ## TOPIC 1.1 Scalars and Vectors  
 
@@ -17,7 +24,7 @@ Vectors can be visually modeled as arrows with appropriate direction and lengths
 
 ### EK 1.1.A.4 Vector Notation:
 Vectors can be expressed in **unit vector notation** or as a **magnitude and a direction**. 
-- i) Unit vector notation can be used to represent vectors as the sum of their constituent components in the $x-, y-,$ and $z$-directions, denoted by $\hat{i}, \hat{j},$ and $\hat{k},$ respectively. \
+- i) Unit vector notation can be used to represent vectors as the sum of their constituent components in the $x-, y-,$ and $z$-directions, denoted by **$\hat{i}, \hat{j},$** **and** **$\hat{k},$** respectively. \
 *Relevant equation:*
 $$
 \vec{r} = (A\hat{i}+B\hat{j}+C\hat{k})
@@ -31,7 +38,7 @@ $$
 $$
 
 ### EK 1.1.A.5 
-In a given one-dimensional coordinate system, opposite directions are denoted by opposite signs. 
+In a given one-dimensional coordinate system, *opposite* **directions** are denoted by *opposite* **signs**. 
 
 ## TOPIC 1.2 Displacement, Velocity, and Acceleration 
 
@@ -181,6 +188,19 @@ Projectile motion is a special case of twodimensional motion that has zero accel
 > BOUNDARY STATEMENT 
 > - AP Physics C: Mechanics only expects students to quantitatively analyze the motion of an object in two dimensions. AP Physics C: Electricity and Magnetism expects students to also qualitatively describe the motion of a particle in three dimensions. 
 
+# UNIT 2 Force and Translational Dynamics
+
+- 2.1 Systems and Center of Mass
+- 2.2 Force and Free-Body Diagrams
+- 2.3 Newton's Third Law
+- 2.4 Newton's First Law
+- 2.5 Newton's Second Law
+- 2.6 Gravitational Force
+- 2.7 Kinetic and Static Friction
+- 2.8 Spring Forces
+- 2.9 Resistive Forces
+- 2.10 Circular Motion
+
 ## TOPIC 2.1 Systems and Center of Mass  
 
 > LEARNING OBJECTIVE 2.1.A 
@@ -207,7 +227,7 @@ As variables external to a system are changed, the system’s substructure may c
 > LEARNING OBJECTIVE 2.1.B 
 > - Describe the location of a system’s center of mass with respect to the system’s constituent parts. 
 
-### EK 2.1.B.1 
+### EK 2.1.B.1
 For objects or systems with symmetrical mass distributions, the center of mass is located on lines of symmetry. 
 
 ### EK 2.1.B.2 
@@ -573,6 +593,14 @@ $$
 > BOUNDARY STATEMENT 
 > - AP Physics C: Mechanics does not expect students to know Kepler’s first or second laws of planetary motion. 
 
+# UNIT 3 Work, Energy, and Power
+
+- 3.1 Translational Kinetic Energy
+- 3.2 Work
+- 3.3 Potential Energy
+- 3.4 Conservation of Energy
+- 3.5 Power
+
 ## TOPIC 3.1 Translational Kinetic Energy  
 
 > LEARNING OBJECTIVE 3.1.A 
@@ -760,6 +788,13 @@ $$
 P_{\text{inst}}=F_{\parallel}v=Fv\cos\theta
 .$$
 
+# UNIT 4 Linear Momentum
+
+- 4.1 Linear Momentum
+- 4.2 Change in Momentum and Impulse
+- 4.3 Conservation of Linear Momentum
+- 4.4 Elastic and Inelastic Collisions
+
 ## TOPIC 4.1 Linear Momentum 
 
 > LEARNING OBJECTIVE 4.1.A 
@@ -892,6 +927,15 @@ In an inelastic collision, some of the initial kinetic energy is not restored to
 
 ### EK 4.4.A.5 
 In a perfectly inelastic collision, the objects stick together and move with the same velocity after the collision. AP PHYSICS C: MECHANICS UNIT 5 Torque and Rotational Dynamics 10–15% AP EXAM WEIGHTING ~14/~20 CLASS PERIODS 
+
+# UNIT 5 Torque and Rotational Dynamics
+
+- 5.1 Rotational Kinematics
+- 5.2 Connecting Linear and Rotational Motion
+- 5.3 Torque
+- 5.4 Rotational Inertia
+- 5.5 Rotational Equilibrium and Newton's First Law in Rotational Form
+- 5.6 Newton's Second Law in Rotational Form
 
 ## TOPIC 5.1 Rotational Kinematics  
 
@@ -1074,6 +1118,15 @@ $$
 $$
 ### EK 5.6.A.3 
 To fully describe a rotating rigid system, linear and rotational analyses may need to be performed independently.
+
+# UNIT 6 Energy and Momentum of Rotating Systems
+
+- 6.1 Rotational Kinetic Energy
+- 6.2 Torque and Work
+- 6.3 Angular Momentum and Angular Impulse
+- 6.4 Conservation of Angular Momentum
+- 6.5 Rolling
+- 6.6 Motion of Orbiting Satellites
 
 ## TOPIC 6.1 Rotational Kinetic Energy  
 
@@ -1273,6 +1326,15 @@ The escape velocity of a satellite is the satellite’s velocity such that the m
 $$
 v_{\textup{esc}}=\sqrt{\dfrac{2GM}{r}}
 $$
+
+# UNIT 7 Oscillations
+
+- 7.1 Defining Simple Harmonic Motion (SHM)
+- 7.2 Frequency and Period of SHM
+- 7.3 Representing and Analyzing SHM
+- 7.4 Energy of Simple Harmonic Oscillators
+- 7.5 Simple and Physical Pendulums
+
 ## TOPIC 7.1 Defining Simple Harmonic Motion (SHM)  
 
 > LEARNING OBJECTIVE 7.1.A 
