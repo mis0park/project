@@ -633,7 +633,7 @@ Work is the amount of energy transferred into or out of a system by a force exer
 Work is a scalar quantity that may be positive, negative, or zero. 
 
 ### EK 3.2.A.3 
-The work done on an object by a variable force is calculated using $W=\int_{a}^{b}\vec{F}(r)\cdot d\vec{r}$, where the integral is taken over the path from point a to point b. 
+The work done on an object by a variable force is calculated using $W=\int_{a}^{b}\vec{F}(r)\cdot d\vec{r}$, where the integral is taken over the path from point $a$ to point $b$. 
 - i) The dot product between two vectors, $\vec{A}$ and $\vec{B}$, results in a scalar quantity of magnitude
 $$
 \vec{A}\cdot\vec{B}=AB\cos\theta
@@ -689,7 +689,7 @@ The conservative forces exerted on a system in a single dimension can be determi
 *Relevant equation:* 
 $$
 F_x=-\frac{dU(x)}{dx}
-.$$
+$$
 
 ### EK 3.3.A.6 
 Graphs of a system’s potential energy as a function of its position can be useful in determining physical properties of that system.
