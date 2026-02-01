@@ -409,7 +409,7 @@ Core metabolic pathways (e.g., glycolysis, oxidative phosphorylation) are conser
 > EXCLUSION STATEMENT — Memorization of the steps in the Calvin cycle, the structure of the molecules, and the names of the enzymes involved, with the exception of ATP synthase, is beyond the scope of the AP Exam. 
 
 ### EK 3.4.A.1 
-Photosynthesis is the series of reactions that use carbon dioxide CO2 , water (H O2 ( ) ), and light energy to make carbohydrates and oxygen ( ) O2 .
+Photosynthesis is the series of reactions that use carbon dioxide ($\textup{CO}_\textup{2}$), water ($\textup{H}_{\textup{2}}\textup{O}$), and light energy to make carbohydrates and oxygen ($\textup{O}_2$).
  - i) Photosynthetic organisms capture energy from the sun and produce sugars that can be used in biological processes or stored.
  - ii) Photosynthesis first evolved in prokaryotic organisms.
  - iii) Scientific evidence supports the claim that prokaryotic (cyanobacterial) photosynthesis was responsible for the production of an oxygenated atmosphere.
