@@ -1,0 +1,389 @@
+\documentclass[letterpaper, 11pt]{article}
+
+% ============================================================
+% AP Chem Notes — CED-based TOC + Unit Preview pages (Letter)
+% Layout: fixed header area + vertical margin-notes lane (right)
+% ============================================================
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Pick ONE font family (Libertinus is great for “textbook-ish”)
+\usepackage{libertinus}
+\usepackage{microtype}
+
+\usepackage{amsmath, amssymb}
+\usepackage[version=4]{mhchem}
+
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+
+% Margin note stability (prevents “Float(s) lost”)
+\usepackage{marginfix}
+
+% --- Page layout (your Cornell-like lane) ---
+\usepackage[
+  left=0.75in,
+  top=1.875in,
+  bottom=0.75in,
+  textwidth=5.0in,
+  marginparsep=0.5in,
+  marginparwidth=1.6in
+]{geometry}
+
+% --- Quiet common warning noise (helps avoid editor squiggle spam) ---
+\hbadness=10000
+\vbadness=10000
+\hfuzz=9999pt
+\vfuzz=9999pt
+\setlength{\emergencystretch}{3em}
+\tolerance=2000
+
+% ============================================================
+% Header labels (drawn on every page by TikZ overlay)
+% ============================================================
+\newcommand{\currentunit}{Unit: Not Set}
+\newcommand{\currenttopic}{Topic: Not Set}
+
+% ============================================================
+% Page frame (line + divider + labels)
+% ============================================================
+\AddToShipoutPictureBG{
+  \begin{tikzpicture}[remember picture, overlay]
+    % horizontal rule
+    \draw[thick] ([shift={(0.75in, -1.625in)}]current page.north west)
+              -- ([shift={(-0.75in, -1.625in)}]current page.north east);
+
+    % vertical divider (between main text and margin notes)
+    \draw[thick] ([shift={(6in, -1.625in)}]current page.north west)
+              -- ([shift={(6in, 0.5in)}]current page.south west);
+
+    % Unit label
+    \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -0.75in)}]current page.north west) {%
+      \fontsize{16pt}{16pt}\selectfont \currentunit
+    };
+
+    % Topic label
+    \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -1.125in)}]current page.north west) {%
+      \fontsize{32pt}{32pt}\selectfont \textbf{\currenttopic}
+    };
+  \end{tikzpicture}
+}
+
+% ============================================================
+% Hyperlink helpers (manual TOC without needing \tableofcontents)
+% ============================================================
+\newcommand{\unitanchor}[1]{\hypertarget{#1}{}}
+\newcommand{\unitlink}[2]{\hyperlink{#1}{#2}}
+
+% ============================================================
+% Start pages
+% ============================================================
+\newcommand{\startfront}[2]{%
+  \clearpage
+  \renewcommand{\currentunit}{#1}%
+  \renewcommand{\currenttopic}{#2}%
+}
+
+\newcommand{\startunitpreview}[2]{%
+  \clearpage
+  \unitanchor{#2}%
+  \renewcommand{\currentunit}{#1}%
+  \renewcommand{\currenttopic}{Unit Preview}%
+}
+
+\newcommand{\starttopic}[2]{%
+  \clearpage
+  \renewcommand{\currentunit}{#1}%
+  \renewcommand{\currenttopic}{#2}%
+}
+
+% ============================================================
+% Right-lane note box (margin notes)
+% ============================================================
+\newcommand{\rnote}[1]{%
+  \marginpar{%
+    \footnotesize
+    \begin{tcolorbox}[
+      colback=yellow!10,
+      colframe=black!60,
+      boxrule=0.6pt,
+      sharp corners,
+      left=5pt,right=5pt,top=5pt,bottom=5pt
+    ]
+    #1
+    \end{tcolorbox}
+  }%
+}
+
+% ============================================================
+% Unit Preview block styles
+% ============================================================
+\newtcolorbox{previewbox}[1]{%
+  colback=white,
+  colframe=black!70,
+  boxrule=0.8pt,
+  sharp corners,
+  left=10pt,right=10pt,top=9pt,bottom=9pt,
+  title=\textbf{#1}
+}
+
+\newcommand{\diagramslist}[1]{%
+  \begin{previewbox}{Must-draw diagrams (your “visual anchors”)}
+  \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    #1
+  \end{itemize}
+  \end{previewbox}
+}
+
+\newcommand{\topicslist}[1]{%
+  \begin{previewbox}{CED Topic checklist}
+  \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    #1
+  \end{itemize}
+  \end{previewbox}
+}
+
+\newcommand{\skillslist}[1]{%
+  \begin{previewbox}{What you should be able to do}
+  \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    #1
+  \end{itemize}
+  \end{previewbox}
+}
+
+% ============================================================
+% Manual “CED Table of Contents” page
+% ============================================================
+\newcommand{\cedtoc}{%
+  \startfront{AP Chemistry}{CED Contents}
+
+  \rnote{\textbf{How to use:}\\
+  Click unit titles to jump to the Unit Preview page.\\[4pt]
+  Keep Unit Previews short; dump details into Topic pages.}
+
+  \begin{previewbox}{AP Chem CED Units (clickable)}
+  \begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+    \item \unitlink{U1}{Unit 1: Atomic Structure and Properties}
+    \item \unitlink{U2}{Unit 2: Molecular and Ionic Compound Structure and Properties}
+    \item \unitlink{U3}{Unit 3: Intermolecular Forces and Properties}
+    \item \unitlink{U4}{Unit 4: Chemical Reactions}
+    \item \unitlink{U5}{Unit 5: Kinetics}
+    \item \unitlink{U6}{Unit 6: Thermodynamics}
+    \item \unitlink{U7}{Unit 7: Equilibrium}
+    \item \unitlink{U8}{Unit 8: Acids and Bases}
+    \item \unitlink{U9}{Unit 9: Applications of Thermodynamics}
+  \end{enumerate}
+  \end{previewbox}
+
+  \begin{previewbox}{Note}
+  If you have a local file named \texttt{ap-chem-ced.md}, keep it beside this \texttt{.tex} as your “source of truth”.
+  This template is pre-filled with the standard AP Chem unit/topic outline so it compiles cleanly even without that file.
+  \end{previewbox}
+}
+
+% ============================================================
+% Document
+% ============================================================
+\begin{document}
+
+% ---------- CED Table of Contents ----------
+\cedtoc
+
+% ---------- Unit Preview Pages (one per unit) ----------
+
+% Unit 1
+\startunitpreview{Unit 1: Atomic Structure and Properties}{U1}
+\rnote{\textbf{Core move:}\\
+Count moles, analyze composition, read PES, predict trends.}
+\topicslist{
+  \item Moles + molar mass; mass composition
+  \item Empirical / molecular formula basics
+  \item Atomic structure; electron configuration
+  \item Photoelectron spectroscopy (PES) interpretation
+  \item Periodic trends (radius, IE, EN) \& reasoning
+}
+\diagramslist{
+  \item PES spectrum sketch \& how peaks map to subshells
+  \item Periodic trend arrows + “why” notes
+}
+\skillslist{
+  \item Convert between mass, moles, particles
+  \item Use composition data to infer formulas
+  \item Justify trends with effective nuclear charge/shielding
+}
+
+% Unit 2
+\startunitpreview{Unit 2: Molecular and Ionic Compound Structure and Properties}{U2}
+\rnote{\textbf{Core move:}\\
+Structure \(\rightarrow\) bonding model \(\rightarrow\) properties.}
+\topicslist{
+  \item Types of chemical bonds; electronegativity \& polarity
+  \item Lewis diagrams, resonance, formal charge
+  \item VSEPR shapes + molecular polarity
+  \item Hybridization (conceptual) \& bond angles
+  \item Ionic solids, metallic bonding (property links)
+  \item Molecular orbital (qualitative: bond order, magnetism)
+}
+\diagramslist{
+  \item Lewis + resonance set (NO\(_3^-\), CO\(_3^{2-}\), SO\(_4^{2-}\))
+  \item VSEPR shape map (AX\(_m\)E\(_n\)) + polarity check
+  \item MO diagrams for O\(_2\), N\(_2\) (qualitative)
+}
+\skillslist{
+  \item Draw Lewis reliably; choose best resonance contributor
+  \item Predict shape + polarity; count electron domains correctly
+  \item Connect bonding type to melting point/conductivity trends
+}
+
+% Unit 3
+\startunitpreview{Unit 3: Intermolecular Forces and Properties}{U3}
+\rnote{\textbf{Core move:}\\
+IMFs explain phase + properties.}
+\topicslist{
+  \item Intermolecular forces (LDF, dipole, H-bonding, ion-dipole)
+  \item Properties: boiling/melting, viscosity, surface tension
+  \item Solids/liquids/gases; particulate diagrams
+  \item Ideal gas law, kinetic molecular theory
+  \item Solutions + solubility (qualitative patterns)
+}
+\diagramslist{
+  \item IMF ranking ladder + “why” examples
+  \item Heating curve (phase change) + where energy goes
+  \item PV/nRT sketch + KMT particle diagram
+}
+\skillslist{
+  \item Rank substances by BP/VP using structure + IMFs
+  \item Explain deviations from ideal behavior conceptually
+}
+
+% Unit 4
+\startunitpreview{Unit 4: Chemical Reactions}{U4}
+\rnote{\textbf{Core move:}\\
+Balance + classify + quantify.}
+\topicslist{
+  \item Net ionic equations; spectators
+  \item Precipitation \& solubility rules (patterns)
+  \item Oxidation numbers; redox basics
+  \item Stoichiometry in reactions; limiting reagent
+  \item Titrations (basic setup + endpoints concept)
+}
+\diagramslist{
+  \item Redox “electron bookkeeping” template
+  \item Titration curve idea (strong/strong baseline)
+}
+\skillslist{
+  \item Write net ionic equations
+  \item Identify oxidized/reduced; connect to electron transfer
+  \item Solve limiting reagent / yield problems cleanly
+}
+
+% Unit 5
+\startunitpreview{Unit 5: Kinetics}{U5}
+\rnote{\textbf{Core move:}\\
+Rates reveal mechanisms.}
+\topicslist{
+  \item Rate laws; determining order from data
+  \item Integrated rate laws (conceptual + basic calculations)
+  \item Arrhenius; activation energy
+  \item Mechanisms; rate-determining step; intermediates
+  \item Catalysis (how it changes pathway)
+}
+\diagramslist{
+  \item Energy diagram: catalyzed vs uncatalyzed
+  \item Mechanism step map (slow step \(\rightarrow\) rate law pieces)
+}
+\skillslist{
+  \item Extract rate law from experiments
+  \item Interpret energy diagrams + explain catalyst effect
+  \item Match plausible mechanism to rate law (qualitative)
+}
+
+% Unit 6
+\startunitpreview{Unit 6: Thermodynamics}{U6}
+\rnote{\textbf{Core move:}\\
+Energy accounting + directionality.}
+\topicslist{
+  \item Enthalpy; calorimetry; Hess’s law
+  \item Entropy (qualitative drivers)
+  \item Gibbs free energy; spontaneity; \(\Delta G\)
+  \item Thermodynamic favorability vs rate (contrast)
+}
+\diagramslist{
+  \item Enthalpy diagram (exo/endo) + sign conventions
+  \item \(\Delta G = \Delta H - T\Delta S\) sign table
+}
+\skillslist{
+  \item Use Hess’s law / formation enthalpies
+  \item Reason about spontaneity using \(\Delta G\), \(\Delta S\)
+}
+
+% Unit 7
+\startunitpreview{Unit 7: Equilibrium}{U7}
+\rnote{\textbf{Core move:}\\
+Q vs K + Le Châtelier.}
+\topicslist{
+  \item Equilibrium expressions; \(K\) and \(Q\)
+  \item Manipulating \(K\); linking to \(\Delta G^\circ\) (qualitative)
+  \item Le Châtelier’s principle (stress-response reasoning)
+  \item Solubility equilibrium \(K_{sp}\) (conceptual + basic)
+}
+\diagramslist{
+  \item ICE-table skeleton (generic)
+  \item \(Q\) vs \(K\) direction decision flow
+}
+\skillslist{
+  \item Write \(K\) expressions correctly
+  \item Predict shifts and composition changes
+}
+
+% Unit 8
+\startunitpreview{Unit 8: Acids and Bases}{U8}
+\rnote{\textbf{Core move:}\\
+pH + buffers + titration logic.}
+\topicslist{
+  \item Acid/base definitions; strong vs weak
+  \item pH/pOH; \(K_a, K_b\); relationships
+  \item Buffers; Henderson–Hasselbalch (when appropriate)
+  \item Titrations (weak/strong curve features)
+}
+\diagramslist{
+  \item pH scale + log intuition
+  \item Titration curve feature map (equivalence, buffer region)
+}
+\skillslist{
+  \item Compute/interprete pH in common scenarios
+  \item Explain buffer behavior qualitatively + with \(K_a\)
+}
+
+% Unit 9
+\startunitpreview{Unit 9: Applications of Thermodynamics}{U9}
+\rnote{\textbf{Core move:}\\
+Electrochem + \(\Delta G\) + equilibrium connection.}
+\topicslist{
+  \item Galvanic vs electrolytic cells
+  \item Cell diagrams; half-reactions
+  \item \(E^\circ\), \(\Delta G^\circ\), and \(K\) relationships
+  \item Nernst equation (conceptual + basic use)
+}
+\diagramslist{
+  \item Cell schematic (anode/cathode, electron flow)
+  \item \(E\)–\(Q\) trend via Nernst (qualitative)
+}
+\skillslist{
+  \item Identify anode/cathode; direction of electron flow
+  \item Connect \(E^\circ\) sign to spontaneity
+}
+
+% ---------- Topic pages (optional placeholders) ----------
+% Keep these as templates; add real notes later.
+% \starttopic{Unit 2: Molecular and Ionic Compound Structure and Properties}{Topic 2.7 VSEPR}
+% \rnote{\textbf{Key:} domains, shape, polarity.}
+% % ... your notes ...
+
+\end{document}

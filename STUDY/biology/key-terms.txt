@@ -1,0 +1,475 @@
+# UNIT 1
+
+## Topic 1.1
+
+### EK 1.1.A.1
+- water
+- polarity
+- polar covalent bonds
+- hydrogen bonding (bonds)
+
+- specific heat capacity
+- heat of vaporization
+- maintain body temperature
+
+### EK 1.1.A.2
+- {hydrogen bonds result in:}
+   - [cohesion]
+   - [adhesion]
+   - [surface tension]
+
+## Topic 1.2
+
+### EK 1.2.A.1
+- {biological molecules}
+   - Carbon
+   - Hydrogen
+   - Oxygen
+   - Sulfur
+   - Phosphorus
+   - Nitrogen
+
+## Topic 1.3
+
+### EK 1.3.A.1
+- [Hydrolysis]
+- [monomer]
+- [polymer]
+- hydrogen ion
+- [hydroxyl group] = OH$^{-}$
+
+### EK 1.3.A.2
+- [Dehydration synthesis]
+- covalent bonding
+- polymerization
+
+## Topic 1.4
+
+### EK 1.4.A.1
+- [carbohydrates]
+- [Monosaccharides]
+- [polysaccharides]
+- covalent bonds
+- complex carbohydrates
+- {polysaccharides can be:}
+   - [linear]
+   - [branched]
+- {examples of carbs:}
+   - cellulose
+   - starch
+   - glycogen
+   - glucose
+
+## Topic 1.5
+
+### EK 1.5.A.1
+- [lipids]
+   - nonpolar
+   - hydrophobic
+- [fatty acids]
+- {saturation of fatty acids:}
+   - [saturated] = only single bonds in the carbon chain
+   - [unsaturated] = more than one double bonds in the carbon chain
+      - {more unsaturated:}
+         - more kinks in the chain
+         - more liquid at room temperature
+
+### EK 1.5.A.2
+- [fat]
+   - energy storage
+   - insulation
+
+- [steroid]
+   - hormone
+   - physiological function
+   - growth and development
+   - energy metabolism
+   - homeostasis
+   
+   - cholesterol
+      - structural stability
+
+- phospholipid
+   - lipid bilayer
+
+## Topic 1.6
+
+### EK 1.6.A.1
+- [nucleic acid]
+   - [DNA]
+   - [RNA]
+- [nucleotide] (nucleotide monomers)
+   - {types of [five-carbon sugar]s:}
+      - deoxyribose
+      - ribose
+   - [phosphate]
+   - {types of [nitrogenous base]:}
+      - [adenine]
+      - [thymine]
+      - [guanine]
+      - [cytosine]
+      - [uracil]
+
+### EK 1.6.A.2
+- linear sequence of nucleotides
+- {ends of nucleotides:}
+   - [3' (three prime) hydroxyl end]
+   - [5' (five prime) phosphate end]
+      - in the sugar of the nucleotides
+
+- [nucleic acid synthesis]
+   - happends at the 3' end of the growing strand
+
+### EK 1.6.A.3
+- antiparallel double helix
+- two strands of nucleotides
+- opposite 5' to 3' oritentation
+DNA; nucleotide pairing:
+   - (A-T)
+   - (C-G)
+RNA; nucleotide pairing:
+   - (A-U)
+   - (C-G)
+
+### EK 1.6.A.4
+| structure | DNA | RNA |
+|-----------|-----|-----|
+| sugar | deoxyribose | ribose |
+| nitrogenous base | thymine | uracil |
+| stranded | double stranded | single stranded | 
+
+## Topic 1.7
+
+### EK 1.7.A.1
+- proteins
+- linear chains
+- amino acids
+- peptide bonds
+- carboxyl group
+- amine group
+- peptide chain
+
+### EK 1.7.A.2
+- central carbon atom
+- hydrogen atom
+- carboxyl group
+- amine group
+- variable R group
+   - hydrophobic/nonpolar
+   - hydrophilic/polar
+   - ionic
+- interactions of R groups
+
+### EK 1.7.A.3
+- squence of AA 
+- primary structure
+- polypeptide
+
+### EK 1.7.A.4
+- secondary structure
+- local folding
+- polypeptide backbone
+- alpha-helices
+- beta-pleated sheets
+
+### EK 1.7.A.5
+- tertiary structure
+- three-dimensional
+   - hydrogen bonds
+   - hydrophobic interactions
+   - ionic interactions
+   - disulfide bridges
+
+### EK 1.7.A.6
+- quaternary structure
+- multiple polypeptides
+
+# Unit 2
+
+## Topic 2.1
+
+### [ribosomes]
+   * non-memebrane structure
+   * composed of = ribosomal RNA (rRNA) and protein
+   * function = synthesize proteins according to messenger RNA(mRNA) sequences
+
+- [ribosomal RNA (rRNA)]
+- [messenger RNA (mRNA)]
+
+### [endomembrane system]
+   * composed of = a group of membrane-bound organelles and subcellular components
+   - {organelles include:}
+      - endoplasmic reticulum (ER)
+      - golgi complex
+      - lysosomes
+      - vacuoles
+      - trnasport vesicles
+      - the nuclear envelope
+      - the plasma membrane
+   * function = work together to _modify, package, and transport_ _polysaccharides, lipids, and proteins_ intercellularly
+
+### [endoplasmic reticulum (ER)]
+   * function = provides mechanical support for the cell
+      - ^by^ helping cells maintain shape
+   * takes part in = intercellular transport
+
+### [rough ER (rER)]
+   * has ribosomes attached to its surface
+   * function = allows for compartmentalization of cells
+   * takes part in = protein synthesis
+
+### [smooth ER (sER)]
+   * function = detoxification of cells
+   * primary site for = lipid synthesis
+
+### [golgi complex]
+   * membrane-bound structure
+   * structure = series of flattened membrane sacs
+   * function = correctly folding and chemically modifying newly synthesized cellular products
+   * function = packaging proteins for trafficking
+
+### [mitochondria]
+   * structure = has a double membrane 
+      - double-membrane = provides compartments for different metabolic reactions involved in aerobic cellular respiration
+      * outer membrane = smooth
+      * inner membrane = has folds
+         - [cristae]
+            * structure = folds in the inner memebrane of mitochondria
+            * function = enable ATP synthesis more efficiently
+
+### [lysosomes]
+   * membrane-bound sacs
+   * structure = contain hydrolytic enzymes
+      - [hydrolytic enzymes] = used to digest material
+   * takes part in apoptosis
+      - [apoptosis] = programmed cell death
+
+### [vacuoles]
+   * membrane-bound sacs
+   * function = multiple roles
+      - plant cells
+         * structure = specialized large vacuole
+         * function = maintains turgor pressure
+            ^by^ nutrient and water storage
+      - animal cells
+         * structure = smaller vacuoles
+         * structure = more plentiful (compared to plant cells)
+         * function = store cellular materials
+
+### [chloroplasts]
+   * found in = plants and photosynthetic algae
+   * structure = double membrane
+   * primary site for = [photosynthesis] (chloroplasts are specialzed organelles)
+
+## Topic 2.2
+
+[surface-area-to-volume ratio]
+* affects the ability of a biological system to
+   - obtain necessary nutrients
+   - eliminate waste products
+   - acquire or disspate thermal energy
+   - exchange chemicals and energy with its environment
+
+> EQ for volume/SA of sphere, cube, rectangular solid, cylinder
+> using radius, length, height, width, s = sidelength of cube
+$$
+\text{V_{sphere}: } V=\frac{4}{3}\pi r^3 \\
+\text{V_{cube}: } V=s^3 \\
+\text{V_{rectangular solid}: } V=lwh \\
+\text{V_{cylinder}: } V=\pi r^2 h \\
+\text{SA_{sphere}: } SA=4\pi r^2 \\
+\text{SA_{cube}: } V=6s^2 \\
+\text{SA_{rectangular solid}: } SA=2lh + 2lw + 2wh \\
+\text{SA_{cylinder}: } SA = 2\pi rh + 2\pi r^2 \\
+$$
+
+$$
+r = \text{radius} \\
+l = \text{length} \\
+h = \text{height} \\
+w = \text{width} \\
+s = \text{length of one side of a cube} \\
+$$
+
+<<<SA of the plasma membrane must be large enough to adequately exchange materials>>>
+[SA-to-V ratio]
+   * can restrict cell size & shape
+   * smaller cells = higher SA-to-V ratio = efficient exchange of materials with environment
+   * increase in volume of cells = decrease in SA-to-V ratio
+      = demand for resources increases
+         ===> <<<complex cellular structures (e.g., folds) are necessary to adaquately exchange materials with the environment>>>
+      = affects properties like rate of heat exchange with the environment
+         * smaller amounts of mass = exchange proportionally more heat with environment
+         * increase in mass = SA-to-V ratio and rate of heat exchange decrease
+- metabolic rate per unit body mass & size of multicelluar organisms
+   - smaller size = higher metabolic rate per unit body mass
+
+## Topic 2.3
+
+### [plasma membrane]
+   * structural framework of phospholipid molecules embedded with proteins, steroids, glycoproteins and glycolipids
+   * structure =
+      - phospholipid bilayer
+      - {embedded with: }
+         - proteins
+         - steroids
+         - glycoproteins
+         - glycolipids
+      - components can move around the surface of the cell within the membrane
+   - [fluid mosaic model] = illustrates the mobility of the embedded molecules in the plasma membrane
+
+### [phospholipids]
+   * structure =
+      - polar hydrophilic phosphate regions
+         - oriented towards the outside/inside aquaeous environment
+      - nonpolar hydrophobic fatty acid regions
+         - facing eachother within the interior of the membrane
+
+### [embedded proteins]
+   * polarity = can be hydrophilic, hydrophobic, or both
+   * location = 
+      - hydrophilic regions of proteins =
+         - in the interior of the proteins
+         - exposed to the [cytosol] ([cytoplasm])
+      - hydrophobic regions of proteins =
+         - make up the protein surface
+         - interacts with the fatty acids in the interior of the plasma membrane
+
+## Topic 2.4
+
+### [plasma membrane]
+   * function = separates the cell from the external environment
+   - [selective permeability] = characteristic of the plasma membrane resulting from the fact that the plasma membrane contains a hydrophobic interior
+
+| type of molecule | examples | permeability |
+|------------------|-----------|-------------|
+| small nonpolar molecules | $\text{N}_2$, $\text{O}_2$, $\text{CO}_2$ | freely pass across the membrane |
+| hydrophilic molecules | large polar molecules, ions | move through embedded channels and transport proteins |
+| ions, polar molecules |  | movement prevented by the nonpolar hydrocarbon tails of phospholipids |
+| small polar, uncharged molecules | $\text{H}_2\text{O}$, $\text{NH}_3$ (ammonia) | pass through the membrane in small amounts |
+
+### [cell walls]
+   * found in = Bacteria, Archaea, Fungi, and plants
+   * function = provides 
+      - structural boudary
+      - permeablility barrier for some substances to the internal or external cellular environments
+      - protection from osmotic lysis
+
+## Topic 2.4
+### [selective permeability]
+   * function = allows for the formation of cocentration gradients of solutes across the membrane
+   - [concentration gradients]
+
+> maintain water & solute balance
+[passive transport] = net movement of molecules from regions of high concentration to regions of low concentration without the direct input of metabolic energy
+[active transport] = sometimes utilized to move molecules from regions of low concentration to reigions of high concentration, requires the direct input of energy to move molecules
+
+> transport large molecules across the plasma membrane
+[endocytosis] & [exocytosis] = 
+   * require energy
+   * move large substances or large amounts of substances
+   * into and out of cells
+
+   - [endocytosis] = the cell **takes in** large molecules and particulate matter ^by^ folding the plasma membrane on itself and forming new (small) vesicles that engulf material from the external environment
+   - [exocytosis] = internal vesicles **release material** from cells ^by^ fusing with the plasma membrane and secreting large molecules from the cell
+
+## Topic 2.6
+
+### [facilitated diffusion] = requires transport proteins or channel proteins to enable the movement of charged ions across the membrane
+   * enables the movement of large polar molecules through membranes with no energy input
+   * substances move down the concentration gradient
+
+- movement of ions across the membrane may result in polarization of membrane
+- charged ions like $\text{Na}^{+}$(sodium ion) and $\text{K}^{+}$(potassium ion) require channel proteins
+- [aquaporins] = channel protein used to transport large quantities of water across membranes
+   * used in [facilitated diffusion]/[passive transport]
+
+## Topic 2.7
+
+### [tonicity] = describes external environments solute concentration relative to the concentration from cells
+   - [hypotonic] = low concentration of solute / high concentration of water
+   - [hypertonic] = high concentration of solute / low concentration of water
+   - [isotonic]
+
+ex) contractile vacuoles / central vacuoles in plants
+
+### Water Potential
+$$\Phi = \Phi_{p} + \Phi_{s}$$
+$$\Phi_{p} =$$ pressure potential
+$$\Phi_{s} =$$ solute potential
+
+[Growth and homeostasis] = maintained by the constant movement of molecules across membranes
+
+### [Osmoregulation]
+   * maintains water balance
+   * allows organisms to control their internal solute composition and water potential
+   * water moves = low osmolarity(solute concentration) -> high osmolarity(solute concentration)
+
+### Solute Potential of a Solution
+$$\Phi_{s} = -iCRT $$ where:
+$i = $ionization constant
+$C = $molar concentration
+$R = $pressure constant
+$(R = 0.0831 \dfrac{L\cdot bars}{mol\cdot K})$
+$T = $temperature in Kelvin ($\celcius$+273)
+
+## Topic 2.8
+[metabolic energy] (such as that from ATP)
+- required for: active transport of molecules and ions
+- required to: establish and maintain electrochemical gradients
+
+active transport requires membrane proteins
+$Na^{+}/K^{+}$ pump, ATPase = contribute to maintaining membrane potential
+
+## Topic 2.10
+prokaryotes = lack internal membrane-bound organelles but have internal regions with specialized structures and functions
+
+eukaryotes = maintain internal membranes that partition the cell into specialized regions
+- membrane-bound organelles such as mitochondria and chloroplasts evolved from once free-living prokaryotic cells via endosymbiosis
+
+## Topic 2.9
+membranes and membrane-bound organelles in eukaryotic cells compartmentalize in intracellular metabolic processes and specific enzymatic reactions
+internal membranes facilitate cellular processes 
+- by minimizing competing interactions 
+- by increasing the surface area where reactions can occur
+
+## Membrane Transport
+Membrane Transport
+├─ Passive transport
+│  ├─ Simple diffusion
+│  │   └─ small, nonpolar molecules (O₂, CO₂)
+│  ├─ Osmosis
+│  │   └─ water (often via aquaporins)
+│  └─ Facilitated diffusion
+│      ├─ channel proteins
+│      │   └─ ions (Na⁺, K⁺, Cl⁻), water
+│      └─ carrier proteins
+│          └─ large polar molecules (e.g., glucose)
+│
+├─ Active transport
+│  ├─ Primary active transport
+│  │   └─ ATP-driven pumps (Na⁺/K⁺ pump, ATPase)
+│  └─ Secondary active transport
+│      └─ cotransport (uses ion gradients)
+│
+└─ Bulk transport (vesicular; requires energy)
+   ├─ Endocytosis
+   │   ├─ Phagocytosis (solids)
+   │   ├─ Pinocytosis (fluids)
+   │   └─ Receptor-mediated endocytosis
+   └─ Exocytosis
+
+## Prokaryote vs Eukaryote
+| prokaryotes | eukaryotes |
+|-------------|------------|
+| x have nucleus | has a nucleus |
+| circular DNA, in the nucleoid region | linear DNA, in the nucleus |
+| lack internal membrane-bound organelles | membrane-bound organelles exist |
+| (but) have internal regions with specialized function and structure | maintain internal membranes partition the cell into specialized regions | 
+| ribosomes exist, (smaller in size) | ribosomes exist, (larger in size) |
+| smaller in size | bigger in size |
+
+prokaryotes = lack internal membrane-bound organelles but have internal regions with specialized structures and functions
+
+eukaryotes = maintain internal membranes that partition the cell into specialized regions
+- membrane-bound organelles such as mitochondria and chloroplasts evolved from once free-living prokaryotic cells via endosymbiosis

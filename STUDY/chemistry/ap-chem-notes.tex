@@ -1,0 +1,242 @@
+\documentclass[letterpaper, 11pt]{article}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{lmodern, microtype}
+\usepackage{amsmath, amssymb}
+\usepackage{mhchem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{placeins} 
+
+% --- [핵심] FLOATS LOST 에러 해결 ---
+\usepackage{marginnote} 
+\renewcommand{\marginpar}[1]{\marginnote{#1}} 
+
+% --- TCOLORBOX SETUP ---
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins} 
+
+% --- LAYOUT ---
+\usepackage{tocloft}
+\usepackage[
+   left=0.75in,
+   top=1.875in,
+   bottom=0.75in,
+   textwidth=5.0in,
+   marginparsep=0.5in,
+   marginparwidth=1.6in,
+   headheight=0.35in,
+   includehead=false
+]{geometry}
+
+% =========================================================
+% 1. APPLE CALENDAR COLORS
+% =========================================================
+\definecolor{calBg}{HTML}{F1F5F0}      
+\definecolor{calPink}{HTML}{F15780}    
+\definecolor{calBlue}{HTML}{80D2F9}    
+\definecolor{calGreen}{HTML}{90E696}   
+\definecolor{calOrange}{HTML}{FD8206}  
+\definecolor{calYellow}{HTML}{FEC30B}  
+\definecolor{calMint}{HTML}{7DE5E6}    
+
+\colorlet{darkPink}{calPink!60!black}
+\colorlet{darkBlue}{calBlue!50!black}
+\colorlet{darkGreen}{calGreen!50!black}
+\colorlet{darkOrange}{calOrange!60!black}
+\colorlet{darkYellow}{calYellow!50!black}
+\colorlet{darkMint}{calMint!50!black}
+
+\pagecolor{calBg}
+
+% =========================================================
+% 2. BOX STYLES (짧은 이름 + 자동 목차)
+% =========================================================
+
+% 공통 스타일 (인자 3개: 배경색, 제목, 글자색)
+\tcbset{
+    applebox/.style n args={3}{
+        enhanced, breakable,
+        colback=#1!10!calBg, colframe=#1,  
+        boxrule=0.5pt, arc=0.15in,            
+        left=0.15in, right=0.15in, top=0.15in, bottom=0.15in,
+        toptitle=0.1in, bottomtitle=0.1in,
+        attach boxed title to top left={xshift=0.2in, yshift*=-\tcboxedtitleheight/2},
+        boxed title style={
+            enhanced, frame hidden,
+            colback=#1!20!white, 
+            borderline west={0.25in}{0pt}{#1}, % 왼쪽 두꺼운 바
+            arc=0.05in, sharp corners=west, right=0.1in,       
+        },
+        title={#2}, coltitle=#3, fonttitle=\sffamily\bfseries,
+    }
+}
+
+% --- [Blue] Definition Box (사용법: \begin{defn}{제목} ... \end{defn}) ---
+\newtcolorbox{defn}[1]{
+    applebox={calBlue}{Definition}{darkBlue},
+    % 자동으로 목차에 추가하는 코드
+    code={\refstepcounter{definitions}\addcontentsline{def}{definitions}{\protect\numberline{}#1}},
+    before upper={\textcolor{darkBlue}{\textbf{#1:}}\\[0.05in]}
+}
+
+% --- [Green] Equation Box (사용법: \begin{eqn}{제목} ... \end{eqn}) ---
+\newtcolorbox{eqn}[1]{
+    applebox={calGreen}{Equation \theequations}{darkGreen},
+    code={\refstepcounter{equations}\addcontentsline{eq}{equations}{\protect\numberline{\theequations}#1}},
+    before upper={\textcolor{darkGreen}{\textbf{#1:}}\\[0.1in]}
+}
+
+% --- [Orange] Example Box (사용법: \begin{ex}{제목} ... \end{ex}) ---
+\newtcolorbox{ex}[1]{
+    applebox={calOrange}{Example}{darkOrange},
+    before upper={\textcolor{darkOrange}{\textbf{#1:}}\enspace}
+}
+
+% --- [Pink] Figure Box (사용법: \begin{fig}{제목} ... \end{fig}) ---
+\newtcolorbox{fig}[1]{
+    applebox={calPink}{Figure}{darkPink},
+    before upper={\textcolor{darkPink}{\textbf{#1}}\\[0.1in]}
+}
+
+
+% =========================================================
+% 3. TOC & LISTS
+% =========================================================
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{0.15in}
+
+\newcommand{\listdefname}{Summary of Definitions}
+\newlistof{definitions}{def}{\listdefname}
+
+\newcommand{\listeqname}{Summary of Equations}
+\newlistof{equations}{eq}{\listeqname}
+
+
+% =========================================================
+% 4. LAYOUT LOGIC
+% =========================================================
+\newcommand{\currentunit}{Unit: Not Set}
+\newcommand{\currenttopic}{Topic: Not Set}
+\newcounter{topicstartpage}
+
+\AddToShipoutPictureBG{
+   \begin{tikzpicture}[remember picture, overlay]
+      \draw[thick, black!60] ([shift={(0.75in, -1.625in)}]current page.north west) -- ([shift={(-0.75in, -1.625in)}]current page.north east);
+      \draw[thick, black!60] ([shift={(6in, -1.625in)}]current page.north west) -- ([shift={(6in, 0.5in)}]current page.south west);
+      \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -0.75in)}]current page.north west) {
+         \fontsize{16pt}{16pt}\selectfont \textcolor{black!70}{\currentunit}
+      };
+      \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -1.125in)}]current page.north west) {
+         \fontsize{32pt}{32pt}\selectfont \textbf{\currenttopic}
+      };
+   \end{tikzpicture}
+}
+
+\newcommand{\starttopic}[2]{
+   \FloatBarrier         
+   \clearpage            
+   \gdef\currentunit{#1} 
+   \gdef\currenttopic{#2}
+   \phantomsection 
+   \addcontentsline{toc}{section}{#2}
+   \setcounter{topicstartpage}{\value{page}}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{
+   \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=north west, inner sep=0pt, right] at ([shift={(0.875in, -1.125in)}]current page.north west) {
+         \phantom{\fontsize{32pt}{32pt}\selectfont \textbf{\currenttopic}}
+         \ifnum\value{page}>\value{topicstartpage}
+            \hspace{0.3in} \fontsize{16pt}{16pt}\selectfont \textcolor{black!40}{(cont.)}
+         \fi
+      };
+   \end{tikzpicture}
+}
+\fancyfoot[R]{\thepage}
+
+
+% =========================================================
+% DOCUMENT CONTENT
+% =========================================================
+\begin{document}
+
+\tableofcontents
+\thispagestyle{empty}
+
+% ---------------------------------------------------------
+% Topic 1
+% ---------------------------------------------------------
+\starttopic{Unit 3: Cellular Energetics}{Topic 3.1 Enzyme Structure}
+
+\section*{Core Concepts}
+Now use short environment names. It is faster and safer!
+
+% Definition -> \begin{defn}
+\begin{defn}{Allosteric Regulation}
+   The regulation of an enzyme by binding an effector molecule at a site other than the enzyme's active site.
+\end{defn}
+
+\marginnote{
+   \textbf{Tip:}\\
+   Use \texttt{defn}, \texttt{ex}, \texttt{eqn} for speed.
+}
+
+% Equation -> \begin{eqn}
+\begin{eqn}{Gibbs Free Energy}
+   \[ \Delta G = \Delta H - T\Delta S \]
+\end{eqn}
+
+\vspace{0.2in}
+
+% Example -> \begin{ex}
+\begin{ex}{Hemoglobin}
+   Hemoglobin shows cooperativity.
+\end{ex}
+
+% Figure -> \begin{fig}
+\begin{fig}{Activation Energy}
+   (Graph Placeholder)\\
+   \begin{tikzpicture}
+      \draw[->] (0,0) -- (3,0);
+      \draw[->] (0,0) -- (0,2);
+      \draw[calPink, very thick] (0,0.5) .. controls (1,2) .. (3,1);
+   \end{tikzpicture}
+\end{fig}
+
+\vspace{3in}
+Testing page break... 
+\marginnote{\textbf{Safe Note!}}
+
+% ---------------------------------------------------------
+% Topic 2
+% ---------------------------------------------------------
+\starttopic{Unit 3: Cellular Energetics}{Topic 3.2 Cellular Respiration}
+
+\section*{Glycolysis}
+Everything works perfectly.
+
+\begin{ex}{Glucose Breakdown}
+   1 Glucose -> 2 Pyruvate + 2 ATP + 2 NADH
+\end{ex}
+
+\clearpage
+\section*{Unit Summary}
+\listofdefinitions
+\listofequations
+
+\end{document}

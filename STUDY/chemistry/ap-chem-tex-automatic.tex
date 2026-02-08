@@ -1,0 +1,98 @@
+\documentclass[letterpaper, 11pt]{article}
+
+% --- 패키지 로드 ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus} 
+\usepackage{lmodern, microtype}
+\usepackage{amsmath, amssymb}
+\usepackage{mhchem} 
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic} 
+
+% [핵심 해결책] 이 패키지가 'Float(s) lost' 에러를 막아줍니다.
+\usepackage{marginfix} 
+
+% --- 페이지 레이아웃 설정 ---
+\usepackage[
+    left=0.75in, 
+    top=1.875in, 
+    bottom=0.75in, 
+    textwidth=5.0in, 
+    marginparsep=0.5in, 
+    marginparwidth=1.6in
+]{geometry}
+
+% --- 변수 설정 ---
+\newcommand{\currentunit}{Unit: Not Set}
+\newcommand{\currenttopic}{Topic: Not Set}
+
+% --- 레이아웃 그리기 ---
+\AddToShipoutPictureBG{
+    \begin{tikzpicture}[remember picture, overlay]
+        % 수평선
+        \draw[thick] ([shift={(0.75in, -1.625in)}]current page.north west) -- ([shift={(-0.75in, -1.625in)}]current page.north east);
+        % 수직선
+        \draw[thick] ([shift={(6in, -1.625in)}]current page.north west) -- ([shift={(6in, 0.5in)}]current page.south west);
+        % Unit Label
+        \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -0.75in)}]current page.north west) {
+            \fontsize{16pt}{16pt}\selectfont \currentunit
+        };
+        % Topic Label
+        \node[anchor=north west, inner sep=0pt] at ([shift={(0.875in, -1.125in)}]current page.north west) {
+            \fontsize{32pt}{32pt}\selectfont \textbf{\currenttopic}
+        };
+    \end{tikzpicture}
+}
+
+% --- 토픽 시작 커맨드 ---
+\newcommand{\starttopic}[2]{
+    \clearpage 
+    \renewcommand{\currentunit}{#1}  
+    \renewcommand{\currenttopic}{#2} 
+    \phantomsection 
+    \addcontentsline{toc}{section}{#2} 
+}
+
+% --- 본문 시작 ---
+\begin{document}
+
+% 1. 첫 번째 토픽
+\starttopic{Unit 3: Cellular Energetics}{Topic 3.1 Enzyme Structure}
+
+\section*{Main Notes}
+Enzymes are biological catalysts.
+\begin{itemize}
+    \item Shape determines function.
+    \item Active site specificity.
+\end{itemize}
+
+% 오른쪽 노트 예시
+\marginpar{
+    \section*{Keywords}
+    Catalyst\\
+    Substrate
+}
+
+\vspace{4in} % 일부러 공간을 채워서 페이지 끝으로 밀어봅니다.
+Writing near the bottom of the page...
+If I add a margin note here, it used to cause an error.
+
+\marginpar{
+    \textbf{Note:} This note is at the very bottom!
+}
+
+% 2. 두 번째 토픽 (이제 에러가 나지 않고 잘 보일 겁니다)
+\starttopic{Unit 3: Cellular Energetics}{Topic 3.2 Cellular Respiration}
+
+\section*{Glycolysis}
+Now you can see Topic 3.2! The previous margin note has been handled safely.
+
+\[ \ce{C6H12O6 + 6O2 -> 6CO2 + 6H2O} \]
+
+\end{document}

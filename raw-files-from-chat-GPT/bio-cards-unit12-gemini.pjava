@@ -1,0 +1,316 @@
+// ==========================================
+// UNIT 1: CHEMISTRY OF LIFE
+// ==========================================
+
+// --- TOPIC 1.1: Structure of Water and Hydrogen Bonding ---
+
+ENTITY [[Hydrogen Bond]] {
+  "etype": %interaction%
+  "aliases": { [[H-bond]] }
+  "labels": {
+    "sub-type": %intermolecular_force%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.1: Structure of Water and Hydrogen Bonding%,
+    "big_idea": %SYI: Systems Interactions%
+  }
+  "properties": {
+    "strength": %weak%,
+    "basis": [[Electronegativity]]
+  }
+  "definition": <<<A weak bond between a slightly positive hydrogen atom in one molecule and a slightly negative atom (usually oxygen or nitrogen) in another molecule.>>>
+  "relations": {
+    "causes": [ [[Cohesion]], [[Adhesion]], [[Surface Tension]] ]
+  }
+}
+
+ENTITY [[Water]] {
+  "etype": %molecule%
+  "aliases": { [[H2O]] }
+  "labels": {
+    "sub-type": %inorganic%-%polar_molecule%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.1: Structure of Water and Hydrogen Bonding%,
+    "big_idea": %SYI%
+  }
+  "parts": [ [[Hydrogen Atom]], [[Oxygen Atom]] ]
+  "properties": {
+    "polarity": %polar%,
+    "specific_heat": %high%
+  }
+  "definition": <<<A polar molecule composed of one oxygen atom covalently bonded to two hydrogen atoms; the universal solvent for life.>>>
+}
+
+// --- TOPIC 1.3: Introduction to Biological Macromolecules ---
+
+ENTITY [[Dehydration Synthesis]] {
+  "etype": %process%
+  "aliases": { [[Condensation Reaction]] }
+  "labels": {
+    "sub-type": %reaction%-%anabolic%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.3: Intro to Biological Macromolecules%,
+    "big_idea": %ENE: Energetics%
+  }
+  "inputs": [ [[Monomer]], [[Monomer]] ]
+  "outputs": [ [[Polymer]], [[Water]] ]
+  "definition": <<<A chemical reaction in which two molecules covalently bond to each other with the removal of a water molecule.>>>
+  "relations": {
+    "creates": [[Covalent Bond]],
+    "inverse_of": [[Hydrolysis]]
+  }
+}
+
+ENTITY [[Hydrolysis]] {
+  "etype": %process%
+  "labels": {
+    "sub-type": %reaction%-%catabolic%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.3: Intro to Biological Macromolecules%,
+    "big_idea": %ENE%
+  }
+  "inputs": [ [[Polymer]], [[Water]] ]
+  "outputs": [ [[Monomer]], [[Monomer]] ]
+  "definition": <<<A chemical process that splits a molecule by adding water; essentially the reverse of dehydration synthesis.>>>
+  "relations": {
+    "breaks": [[Covalent Bond]]
+  }
+}
+
+// --- TOPIC 1.4 & 1.5: Properties/Structure of Macromolecules ---
+
+ENTITY [[Carbohydrate]] {
+  "etype": %molecule%
+  "labels": {
+    "sub-type": %organic%-%macromolecule%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.5: Structure and Function of Biological Macromolecules%,
+    "big_idea": %ENE%
+  }
+  "parts": [ [[Carbon]], [[Hydrogen]], [[Oxygen]] ]
+  "properties": {
+    "ratio": "1:2:1 (C:H:O)",
+    "monomer": [[Monosaccharide]]
+  }
+  "definition": <<<A sugar (monosaccharide) or one of its dimers (disaccharides) or polymers (polysaccharides).>>>
+}
+
+ENTITY [[Lipid]] {
+  "etype": %molecule%
+  "labels": {
+    "sub-type": %organic%-%macromolecule%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.5: Structure and Function of Biological Macromolecules%,
+    "big_idea": %ENE%
+  }
+  "parts": [ [[Fatty Acid]], [[Glycerol]] ]
+  "properties": {
+    "polarity": %nonpolar%,
+    "hydrophobicity": %hydrophobic%
+  }
+  "definition": <<<A class of large biological molecules that does not include true polymers and are generally hydrophobic (fats, phospholipids, steroids).>>>
+}
+
+ENTITY [[Protein]] {
+  "etype": %molecule%
+  "aliases": { [[Polypeptide]] }
+  "labels": {
+    "sub-type": %organic%-%macromolecule%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.5: Structure and Function of Biological Macromolecules%,
+    "big_idea": %IST: Information Storage%
+  }
+  "parts": [ [[Amino Group]], [[Carboxyl Group]], [[R-Group]] ]
+  "properties": {
+    "monomer": [[Amino Acid]],
+    "bond_type": [[Peptide Bond]]
+  }
+  "definition": <<<A functional biological molecule consisting of one or more polypeptides folded and coiled into a specific three-dimensional structure.>>>
+}
+
+ENTITY [[Nucleic Acid]] {
+  "etype": %molecule%
+  "labels": {
+    "sub-type": %organic%-%macromolecule%,
+    "unit": %Unit 1: Chemistry of Life%,
+    "topic": %1.6: Nucleic Acids%,
+    "big_idea": %IST%
+  }
+  "parts": [ [[Phosphate Group]], [[Five-Carbon Sugar]], [[Nitrogenous Base]] ]
+  "properties": {
+    "monomer": [[Nucleotide]],
+    "directionality": "5' to 3'"
+  }
+  "definition": <<<A polymer (polynucleotide) consisting of many nucleotide monomers; serves as a blueprint for proteins and, through the actions of proteins, for all cellular activities.>>>
+}
+
+// ==========================================
+// UNIT 2: CELL STRUCTURE AND FUNCTION
+// ==========================================
+
+// --- TOPIC 2.1: Cell Structure: Subcellular Components ---
+
+ENTITY [[Ribosome]] {
+  "etype": %structure%
+  "labels": {
+    "sub-type": %organelle%-%non_membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %IST%
+  }
+  "parts": [ [[rRNA]], [[Protein]] ]
+  "definition": <<<A complex of rRNA and protein molecules that functions as a site of protein synthesis in the cytoplasm.>>>
+  "relations": {
+    "found_in": [ [[Cytoplasm]], [[Rough ER]] ],
+    "synthesizes": [[Protein]]
+  }
+}
+
+ENTITY [[Endoplasmic Reticulum]] {
+  "etype": %structure%
+  "aliases": { [[ER]] }
+  "labels": {
+    "sub-type": %organelle%-%membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %SYI%
+  }
+  "parts": [ [[Smooth ER]], [[Rough ER]] ]
+  "definition": <<<An extensive membranous network in eukaryotic cells, continuous with the outer nuclear membrane.>>>
+}
+
+ENTITY [[Golgi Complex]] {
+  "etype": %structure%
+  "aliases": { [[Golgi Apparatus]], [[Golgi Body]] }
+  "labels": {
+    "sub-type": %organelle%-%membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %SYI%
+  }
+  "definition": <<<An organelle consisting of stacks of flat membranous sacs that modify, store, and route products of the endoplasmic reticulum.>>>
+  "relations": {
+    "receives_from": [[Endoplasmic Reticulum]],
+    "packages_into": [[Vesicle]]
+  }
+}
+
+ENTITY [[Mitochondria]] {
+  "etype": %structure%
+  "labels": {
+    "sub-type": %organelle%-%membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %ENE%
+  }
+  "parts": [ [[Double Membrane]], [[Matrix]], [[Cristae]], [[DNA]] ]
+  "definition": <<<An organelle in eukaryotic cells that serves as the site of cellular respiration; uses oxygen to break down organic molecules and synthesize ATP.>>>
+  "relations": {
+    "performs": [[Cellular Respiration]],
+    "produces": [[ATP]]
+  }
+}
+
+ENTITY [[Chloroplast]] {
+  "etype": %structure%
+  "labels": {
+    "sub-type": %organelle%-%membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %ENE%
+  }
+  "parts": [ [[Thylakoid]], [[Stroma]], [[Double Membrane]], [[Chlorophyll]] ]
+  "definition": <<<An organelle found in plants and photosynthetic protists that absorbs sunlight and uses it to drive the synthesis of organic compounds from carbon dioxide and water.>>>
+  "relations": {
+    "performs": [[Photosynthesis]]
+  }
+}
+
+ENTITY [[Lysosome]] {
+  "etype": %structure%
+  "labels": {
+    "sub-type": %organelle%-%membrane_bound%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.1: Cell Structure: Subcellular Components%,
+    "big_idea": %ENE%
+  }
+  "parts": [ [[Hydrolytic Enzyme]] ]
+  "definition": <<<A membrane-enclosed sac of hydrolytic enzymes found in the cytoplasm of animal cells and some protists.>>>
+  "relations": {
+    "performs": [[Intracellular Digestion]],
+    "process_type": [[Hydrolysis]]
+  }
+}
+
+// --- TOPIC 2.4: Plasma Membrane ---
+
+ENTITY [[Plasma Membrane]] {
+  "etype": %structure%
+  "aliases": { [[Cell Membrane]] }
+  "labels": {
+    "sub-type": %structure%-%boundary%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.4: Plasma Membranes%,
+    "big_idea": %SB%
+  }
+  "parts": [ [[Phospholipid Bilayer]], [[Protein]], [[Cholesterol]], [[Glycoprotein]] ]
+  "properties": {
+    "model": [[Fluid Mosaic Model]],
+    "permeability": [[Selective Permeability]]
+  }
+  "definition": <<<The membrane at the boundary of every cell that acts as a selective barrier, regulating the cell's chemical composition.>>>
+}
+
+// --- TOPIC 2.6: Membrane Transport ---
+
+ENTITY [[Passive Transport]] {
+  "etype": %process%
+  "labels": {
+    "sub-type": %transport%-%passive%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.6: Membrane Transport%,
+    "big_idea": %ENE%
+  }
+  "inputs": [ [[Solute]] ]
+  "outputs": [ [[Solute]] ]
+  "properties": {
+    "energy_required": %false%,
+    "direction": "High to Low Concentration"
+  }
+  "definition": <<<The diffusion of a substance across a biological membrane with no expenditure of energy.>>>
+  "relations": {
+    "includes": [ [[Diffusion]], [[Osmosis]], [[Facilitated Diffusion]] ]
+  }
+}
+
+ENTITY [[Active Transport]] {
+  "etype": %process%
+  "labels": {
+    "sub-type": %transport%-%active%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.6: Membrane Transport%,
+    "big_idea": %ENE%
+  }
+  "inputs": [ [[Solute]], [[ATP]] ]
+  "outputs": [ [[Solute]], [[ADP]], [[Phosphate]] ]
+  "properties": {
+    "energy_required": %true%,
+    "direction": "Low to High Concentration"
+  }
+  "definition": <<<The movement of a substance across a cell membrane against its concentration or electrochemical gradient, mediated by specific transport proteins and requiring an expenditure of energy.>>>
+}
+
+ENTITY [[Endocytosis]] {
+  "etype": %process%
+  "labels": {
+    "sub-type": %transport%-%bulk%,
+    "unit": %Unit 2: Cell Structure and Function%,
+    "topic": %2.6: Membrane Transport%,
+    "big_idea": %ENE%
+  }
+  "inputs": [ [[Macromolecules]], [[Plasma Membrane]] ]
+  "outputs": [ [[Vesicle]] ]
+  "definition": <<<Cellular uptake of biological molecules and particulate matter via formation of vesicles from the plasma membrane.>>>
+  "relations": {
+    "types": [ [[Phagocytosis]], [[Pinocytosis]], [[Receptor-Mediated Endocytosis]] ]
+  }
+}

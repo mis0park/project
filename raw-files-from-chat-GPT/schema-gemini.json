@@ -1,0 +1,22 @@
+ENTITY [[Name]] {
+  "etype": %molecule% | %process% | %structure% | %interaction% | %concept%
+  "aliases": { [[Alias1]], [[Alias2]] }
+
+  "labels": {
+    "sub-type": %category%-%specific%,
+    "unit": %Unit 1% | %Unit 2%,
+    "topic": %1.1% ... %2.11%,
+    "big_idea": %ENE% | %IST% | %SYI% | %EVO%
+  }
+
+  // For Objects (Molecules, Structures)
+  "parts": [ [[Component1]], [[Component2]] ]
+  
+  // For Processes
+  "inputs": [ [[Reactant]] ]
+  "outputs": [ [[Product]] ]
+
+  "properties": { "key": "value" }
+  "definition": <<<Text definition>>>
+  "relations": { "relation_type": [[Target]] }
+}

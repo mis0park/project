@@ -1,0 +1,396 @@
+\documentclass[letterpaper, 11pt]{article}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertinus}
+\usepackage{microtype}
+
+\usepackage{amsmath, amssymb}
+\usepackage[version=4]{mhchem}
+
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{pgffor}
+
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{placeins}
+
+% Robust margin notes
+\usepackage{marginnote}
+\renewcommand{\marginpar}[1]{\marginnote{#1}}
+
+% Footer page number
+\usepackage{fancyhdr}
+
+% Better TOC formatting
+\usepackage{tocloft}
+
+% =========================================================
+% LAYOUT
+% =========================================================
+\usepackage[
+   left=0.75in,
+   top=1.875in,
+   bottom=0.75in,
+   textwidth=5.0in,
+   marginparsep=0.5in,
+   marginparwidth=1.6in
+]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\emergencystretch=2em
+\tolerance=2000
+
+% =========================================================
+% SUBTLE COLORS
+% =========================================================
+\definecolor{paperBg}{HTML}{F8F8F6}
+\definecolor{ink}{HTML}{1F2937}
+\definecolor{muted}{HTML}{6B7280}
+\definecolor{rulecol}{HTML}{B8B8B8}
+
+\definecolor{accBlue}{HTML}{8CA7C9}
+\definecolor{accGreen}{HTML}{9BBFA8}
+\definecolor{accOrange}{HTML}{D2B08A}
+\definecolor{accPink}{HTML}{CFA3B3}
+
+\pagecolor{paperBg}
+\color{ink}
+
+% =========================================================
+% TCOLORBOX (subtle)
+% =========================================================
+\tcbset{
+  noteBase/.style={
+    enhanced, breakable,
+    colback=paperBg!92!white,
+    colframe=ink!18,
+    boxrule=0.4pt,
+    arc=2.2mm,
+    left=3.2mm, right=3.2mm, top=2.6mm, bottom=2.6mm
+  }
+}
+
+\newtcolorbox{defn}[1]{
+  noteBase,
+  borderline west={2.2mm}{0pt}{accBlue},
+  title={Definition},
+  coltitle=ink,
+  fonttitle=\sffamily\bfseries,
+  before upper={\textbf{#1}\par\smallskip}
+}
+
+\newtcolorbox{eqn}[1]{
+  noteBase,
+  borderline west={2.2mm}{0pt}{accGreen},
+  title={Equation},
+  coltitle=ink,
+  fonttitle=\sffamily\bfseries,
+  before upper={\textbf{#1}\par\smallskip}
+}
+
+\newtcolorbox{ex}[1]{
+  noteBase,
+  borderline west={2.2mm}{0pt}{accOrange},
+  title={Example},
+  coltitle=ink,
+  fonttitle=\sffamily\bfseries,
+  before upper={\textbf{#1}\par\smallskip}
+}
+
+\newtcolorbox{fig}[1]{
+  noteBase,
+  borderline west={2.2mm}{0pt}{accPink},
+  title={Diagram / Figure},
+  coltitle=ink,
+  fonttitle=\sffamily\bfseries,
+  before upper={\textbf{#1}\par\smallskip}
+}
+
+% =========================================================
+% HEADER OVERLAY (lines + unit/topic labels)
+% =========================================================
+\newcommand{\currentunit}{}
+\newcommand{\currenttopic}{}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % horizontal rule
+    \draw[line width=0.55pt, rulecol]
+      ([shift={(0.75in, -1.625in)}]current page.north west) --
+      ([shift={(-0.75in, -1.625in)}]current page.north east);
+
+    % vertical split rule
+    \draw[line width=0.55pt, rulecol]
+      ([shift={(6in, -1.625in)}]current page.north west) --
+      ([shift={(6in, 0.5in)}]current page.south west);
+
+    % Unit label
+    \node[anchor=north west, inner sep=0pt] at
+      ([shift={(0.875in, -0.75in)}]current page.north west) {
+        \fontsize{15pt}{15pt}\selectfont \textcolor{muted}{\currentunit}
+      };
+
+    % Topic label (MOVED UP by 0.125in)
+    \node[anchor=north west, inner sep=0pt] at
+      ([shift={(0.875in, -1.045in)}]current page.north west) {
+        \fontsize{36pt}{36pt}\selectfont \textbf{\currenttopic}
+      };
+  \end{tikzpicture}%
+}
+
+% =========================================================
+% FOOTER PAGE NUMBER (bottom-right)
+% =========================================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\textcolor{muted}{\thepage}}
+
+% =========================================================
+% TOC FORMAT (cleaner indentation)
+% =========================================================
+\setcounter{tocdepth}{2}
+\renewcommand{\contentsname}{AP Chemistry Contents}
+
+\setlength{\cftbeforesecskip}{3pt}
+\setlength{\cftbeforesubsecskip}{1pt}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\setlength{\cftsecnumwidth}{3.2em}
+\setlength{\cftsubsecnumwidth}{3.2em}
+
+% =========================================================
+% PAGE START MACROS
+% =========================================================
+\newcommand{\starttocpage}{%
+  \clearpage
+  \gdef\currentunit{AP Chemistry}%
+  \gdef\currenttopic{Table of Contents}%
+  \phantomsection
+}
+
+% Unit preview page (TOC = section with "U1" numberline)
+\newcommand{\startunitpreview}[2]{% unitno, unittitle
+  \FloatBarrier
+  \clearpage
+  \gdef\currentunit{Unit #1: #2}%
+  \gdef\currenttopic{Unit #1 Preview}%
+  \phantomsection
+  \addcontentsline{toc}{section}{\protect\numberline{U#1}Unit #1 Preview: #2}%
+}
+
+% Topic page (TOC = subsection with "1.1" numberline)
+\newcommand{\starttopic}[3]{% unitlabel, topicnum, topictitle
+  \FloatBarrier
+  \clearpage
+  \gdef\currentunit{#1}%
+  \gdef\currenttopic{#2\ \ #3}%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\protect\numberline{#2}#3}%
+}
+
+% =========================================================
+% TOPIC STUB (placeholders you can fill later)
+% =========================================================
+\newcommand{\topicstub}[4]{% unitlabel, topicnum, topictitle, unitno
+  \starttopic{#1}{#2}{#3}
+
+  \section*{Main Notes}
+
+  \begin{defn}{Key Idea}
+    \textit{Write the core definition/idea here.}
+  \end{defn}
+
+  \begin{eqn}{Must-Know Relationship}
+    \[
+      \textit{(equation / proportionality / unit analysis)}
+    \]
+  \end{eqn}
+
+  \begin{ex}{Micro Example}
+    \textit{(one short worked example or quick check)}
+  \end{ex}
+
+  \begin{fig}{Diagram Placeholder}
+    \textit{Drop an image later:}\\
+    \texttt{\textbackslash includegraphics[width=\textbackslash linewidth]\{diagrams/U#4/#2.png\}}
+  \end{fig}
+
+  \marginpar{\textbf{Extra Notes}\par\small
+    \(\star\) traps\par
+    \(\star\) quick rules\par
+    \(\star\) units/signs
+  }
+}
+
+% =========================================================
+% AP CHEM TOPIC LISTS (CED topic names)
+% Format: <topicnum>/<title>
+% =========================================================
+\def\Uone{
+  1.1/Moles and Molar Mass,
+  1.2/Mass Spectra of Elements,
+  1.3/Elemental Composition of Pure Substances,
+  1.4/Composition of Mixtures,
+  1.5/Atomic Structure and Electron Configuration,
+  1.6/Photoelectron Spectroscopy,
+  1.7/Periodic Trends,
+  1.8/Valence Electrons and Ionic Compounds
+}
+\def\Utwo{
+  2.1/Types of Chemical Bonds,
+  2.2/Intramolecular Force and Potential Energy,
+  2.3/Structure of Ionic Solids,
+  2.4/Structure of Metals and Alloys,
+  2.5/Lewis Diagrams,
+  2.6/Resonance and Formal Charge,
+  2.7/VSEPR and Hybridization
+}
+\def\Uthree{
+  3.1/Intermolecular and Interparticle Forces,
+  3.2/Properties of Solids,
+  3.3/Solids, Liquids, and Gases,
+  3.4/Ideal Gas Law,
+  3.5/Kinetic Molecular Theory,
+  3.6/Deviations from Ideal Gas Law,
+  3.7/Solutions and Mixtures,
+  3.8/Representation of Solutions,
+  3.9/Separation of Solutions and Mixtures
+}
+\def\Ufour{
+  4.1/Introduction for Reactions,
+  4.2/Net Ionic Equations,
+  4.3/Representations of Reactions,
+  4.4/Physical and Chemical Changes,
+  4.5/Stoichiometry,
+  4.6/Introduction to Titration,
+  4.7/Types of Chemical Reactions,
+  4.8/Introduction to Oxidation-Reduction (Redox),
+  4.9/Oxidation-Reduction (Redox) Reactions
+}
+\def\Ufive{
+  5.1/Reaction Rates,
+  5.2/Introduction to Rate Law,
+  5.3/Concentration Changes Over Time,
+  5.4/Elementary Reactions,
+  5.5/Collision Model,
+  5.6/Reaction Energy Profile,
+  5.7/Introduction to Reaction Mechanisms,
+  5.8/Reaction Mechanism and Rate Law,
+  5.9/Pre-Equilibrium Approximation,
+  5.10/Multistep Reaction Energy Profile,
+  5.11/Catalysis
+}
+\def\Usix{
+  6.1/Endothermic and Exothermic Processes,
+  6.2/Energy Diagram,
+  6.3/Heat Transfer and Thermal Equilibrium,
+  6.4/Heating Curve,
+  6.5/Calorimetry,
+  6.6/Introduction to Enthalpy of Reaction,
+  6.7/Hess's Law,
+  6.8/Standard Enthalpies of Formation,
+  6.9/Bond Enthalpies
+}
+\def\Useven{
+  7.1/Introduction to Equilibrium,
+  7.2/Direction of Reversible Reactions,
+  7.3/Reaction Quotient and Equilibrium Constant,
+  7.4/Calculating the Equilibrium Constant,
+  7.5/Magnitude of the Equilibrium Constant,
+  7.6/Properties of the Equilibrium Constant,
+  7.7/Calculating Equilibrium Concentrations,
+  7.8/Introduction to Le Ch\^atelier's Principle,
+  7.9/Le Ch\^atelier's Principle,
+  7.10/Introduction to Solubility Equilibria,
+  7.11/Common Ion Effect,
+  7.12/pH and Solubility
+}
+\def\Ueight{
+  8.1/Introduction to Acids and Bases,
+  8.2/pH and pOH of Strong Acids and Bases,
+  8.3/Weak Acid and Base Equilibria,
+  8.4/Acid-Base Reactions and Buffers,
+  8.5/Acid-Base Titrations,
+  8.6/Molecular Structure of Acids and Bases,
+  8.7/pH and pKa,
+  8.8/Properties of Buffers,
+  8.9/Henderson-Hasselbalch Equation,
+  8.10/Buffer Capacity,
+  8.11/Titration Curves
+}
+\def\Unine{
+  9.1/Introduction to Entropy,
+  9.2/Absolute Entropy and Entropy Change,
+  9.3/Gibbs Free Energy and Thermodynamic Favorability,
+  9.4/Thermodynamic and Kinetic Control,
+  9.5/Free Energy and Equilibrium,
+  9.6/Free Energy of Dissolution,
+  9.7/Coupled Reactions,
+  9.8/Galvanic (Voltaic) and Electrolytic Cells,
+  9.9/Cell Potential and Free Energy,
+  9.10/Cell Potential Under Nonstandard Conditions,
+  9.11/Electrolysis and Faraday's Law
+}
+
+% Unit builder: preview + auto topic pages
+\newcommand{\makeunit}[3]{% unitno, unittitle, topiclist
+  \startunitpreview{#1}{#2}
+
+  \section*{Unit Preview}
+  \begin{ex}{How to use}
+    This preview is your \textbf{map}. Use the TOC to jump into any Topic page.
+    Fill each Topic page later — the links already exist.
+  \end{ex}
+
+  \section*{Topics in this Unit}
+  \begin{itemize}[leftmargin=*]
+    \foreach \tn/\tt in {#3}{
+      \item \textbf{\tn}\quad \tt
+    }
+  \end{itemize}
+
+  % Topic pages (placeholders)
+  \foreach \tn/\tt in {#3}{
+    \edef\LocalTopicNum{\tn}\edef\LocalTopicTitle{\tt}%
+    \expandafter\topicstub\expandafter{Unit #1: #2}{\LocalTopicNum}{\LocalTopicTitle}{#1}%
+  }
+}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+\begin{document}
+
+\starttocpage
+\tableofcontents
+
+\makeunit{1}{Atomic Structure and Properties}{\Uone}
+
+\makeunit{2}{Compound Structure and Properties}{\Utwo}
+
+\makeunit{3}{Properties of Substances and Mixtures}{\Uthree}
+
+\makeunit{4}{Chemical Reactions}{\Ufour}
+
+\makeunit{5}{Kinetics}{\Ufive}
+
+\makeunit{6}{Thermochemistry}{\Usix}
+
+\makeunit{7}{Equilibrium}{\Useven}
+
+\makeunit{8}{Acids and Bases}{\Ueight}
+
+\makeunit{9}{Thermodynamics and Electrochemistry}{\Unine}
+
+\end{document}
