@@ -947,7 +947,9 @@ Genetic engineering techniques can be used to analyze and manipulate DNA and RNA
 Natural selection is a major mechanism of evolution. 
 
 ### EK 7.1.A.2 
-According to Darwin’s theory of natural selection, competition for limited resources results in differential survival. Individuals with more favorable phenotypes are more likely to survive and produce more offspring, thus passing on those favorable traits to subsequent generations. 7.1.B 
+According to Darwin’s theory of natural selection, competition for limited resources results in differential survival. Individuals with more favorable phenotypes are more likely to survive and produce more offspring, thus passing on those favorable traits to subsequent generations. 
+
+> LEARNING OBJECTIVE 7.1.B 
 > - Explain how natural selection affects populations. 
 
 ### EK 7.1.B.1 
@@ -970,7 +972,9 @@ Natural selection acts on phenotypic variations in populations.
 Environments change and apply selective pressures to populations. 
 
 ### EK 7.2.A.3 
-Some phenotypic variations can increase or decrease the fitness of an organism in particular environments. 7.2.B 
+Some phenotypic variations can increase or decrease the fitness of an organism in particular environments. 
+
+> LEARNING OBJECTIVE 7.2.B 
 > - Explain how variation in molecules within cells connects to the fitness of an organism. 
 
 ### EK 7.2.B.1 
@@ -1008,7 +1012,9 @@ Evolution is also driven by random occurrences.
 Random processes can lead to changes in allele frequencies in a population.
  - i) Mutations result in genetic variation, which provides phenotypes on which natural selection acts.
  - ii) Genetic drift can allow a small population to diverge from other populations of the same species.
- - iii) Gene flow between two populations prevents them from diverging into separate species. 7.4.C 
+ - iii) Gene flow between two populations prevents them from diverging into separate species. 
+ 
+> LEARNING OBJECTIVE 7.4.C 
 > - Describe the change in the genetic makeup of a population over time. 
 
 ### EK 7.4.C.1 
@@ -1027,7 +1033,8 @@ The Hardy–Weinberg Equilibrium is a model for describing and predicting allele
  - ii) No migration
  - iii) No new mutations
  - iv) Random mating
- - v) No natural selection These conditions are never met, but they provide a valuable null hypothesis. 
+ - v) No natural selection 
+These conditions are never met, but they provide a valuable null hypothesis. 
 
 ### EK 7.5.A.2 
 Allele frequencies in a nonevolving population can be calculated from genotype frequencies. RELEVANT EQUATIONS Hardy–Weinberg Equation— p p + + 2 q q =1 2 2 p q + =1, where: p = frequency of allele 1 in the population q = frequency of allele 2 in the population 
@@ -1040,7 +1047,9 @@ Allele frequencies in a nonevolving population can be calculated from genotype f
 > - Describe the types of data that provide evidence for evolution. 
 
 ### EK 7.6.A.1 
-Evolution is supported by scientific evidence from many disciplines (geographical, geological, physical, biochemical, and mathematical data). 7.6.B 
+Evolution is supported by scientific evidence from many disciplines (geographical, geological, physical, biochemical, and mathematical data). 
+
+> LEARNING OBJECTIVE 7.6.B 
 > - Explain how morphological, biochemical, and geological data provide evidence that organisms have changed over time. 
 
 ### EK 7.6.B.1 
@@ -1119,7 +1128,9 @@ Phylogenetic trees and cladograms represent hypotheses that are constantly being
 Speciation occurs when two populations become reproductively isolated from each other. 
 
 ### EK 7.10.A.2 
-The biological species concept provides a commonly used definition of a species for sexually reproducing organisms. It states that species can be defined as a group capable of interbreeding and exchanging genetic information to produce viable, fertile offspring. 7.10.B 
+The biological species concept provides a commonly used definition of a species for sexually reproducing organisms. It states that species can be defined as a group capable of interbreeding and exchanging genetic information to produce viable, fertile offspring. 
+
+> LEARNING OBJECTIVE 7.10.B 
 > - Describe the rate of evolution and speciation under different ecological conditions. 
 
 ### EK 7.10.B.1 
@@ -1144,7 +1155,10 @@ Various pre-zygotic and post-zygotic mechanisms can maintain reproductive isolat
 
 > BIG IDEA 4 Systems Interactions: Biological systems interact, and these systems and their interactions exhibit complex properties. 
 
-> LEARNING OBJECTIVE 7.11.A Explain how the genetic diversity of a species or population affects its ability to withstand environmental pressures. 7.11.A.1 The level of variation in a population affects population dynamics.
+> LEARNING OBJECTIVE 7.11.A Explain how the genetic diversity of a species or population affects its ability to withstand environmental pressures. 
+
+### EK 7.11.A.1 
+The level of variation in a population affects population dynamics.
  - i) The ability of a population to respond to changes in the environment is influenced by genetic diversity. Species and populations with little genetic diversity are at risk of decline or extinction.
  - ii) Genetically diverse populations are more resilient to environmental perturbation because they are more likely to contain individuals that can withstand the environmental pressure.
  - iii) Alleles that are adaptive in one environmental condition may be deleterious in another because of different selective pressures. 
@@ -1153,9 +1167,15 @@ Various pre-zygotic and post-zygotic mechanisms can maintain reproductive isolat
 
 > BIG IDEA 4 Systems Interactions: Biological systems interact, and these systems and their interactions exhibit complex properties. 
 
-> LEARNING OBJECTIVE 7.12.A Describe the scientific evidence that supports models of the origin of life on Earth. 7.12.A.1 The origin of life on Earth is supported by scientific evidence.
+> LEARNING OBJECTIVE 7.12.A Describe the scientific evidence that supports models of the origin of life on Earth. 
+
+### EK 7.12.A.1 
+The origin of life on Earth is supported by scientific evidence.
  - i) Geological evidence reinforces models of the origin of life on Earth.
- - ii) Earth formed approximately 4.6 billion years ago (bya). The environment was too hostile for life until about 3.9 bya, and the earliest fossil evidence for life dates to 3.5 bya. Taken together, this evidence provides a plausible range of dates for the origin of life. 7.12.A.2 The RNA world hypothesis proposes that RNA could have been the earliest genetic material. There are three assumptions:
+ - ii) Earth formed approximately 4.6 billion years ago (bya). The environment was too hostile for life until about 3.9 bya, and the earliest fossil evidence for life dates to 3.5 bya. Taken together, this evidence provides a plausible range of dates for the origin of life. 
+ 
+### EK 7.12.A.2 
+The RNA world hypothesis proposes that RNA could have been the earliest genetic material. There are three assumptions:
  - i) At some point in time, genetic continuity was assured by the replication of RNA.
  - ii) Base-pairing is necessary for replication. 
  - iii) Genetically encoded proteins were not involved as catalysts. 
@@ -1232,7 +1252,12 @@ The carbon cycle involves recycling carbon atoms through Earth’s biosphere int
 The nitrogen cycle involves several steps, including nitrogen fixation, assimilation, ammonification, nitrification, and denitrification. These steps are performed by microorganisms in the soil. The largest reservoir of nitrogen is the atmosphere. In nitrogen fixation, nitrogen gas ( ) N2 is fixed into ammonia ( ) NH3 , which ionizes to ammonium (NH + 4 ) by acquiring hydrogen ions from the soil solution. 
 
 > LEARNING OBJECTIVE 8.2.B 
-> - Explain how energy flows and matter cycles through trophic levels. 8.2.B.7 The phosphorus cycle involves weathering rocks releasing phosphate ( ) PO 3− 4 into soil and groundwater. Producers take in phosphate, which is incorporated into biological molecules; consumers eat producers, transferring phosphate to animals. Phosphorus returns to the soil via decomposition of biomass, or excretion. Phosphate can also be incorporated back into the environment via decomposition of decaying organic matter. 8.2.C 
+> - Explain how energy flows and matter cycles through trophic levels. 
+
+### EK 8.2.B.7 
+The phosphorus cycle involves weathering rocks releasing phosphate ( ) PO 3− 4 into soil and groundwater. Producers take in phosphate, which is incorporated into biological molecules; consumers eat producers, transferring phosphate to animals. Phosphorus returns to the soil via decomposition of biomass, or excretion. Phosphate can also be incorporated back into the environment via decomposition of decaying organic matter. 
+
+> LEARNING OBJECTIVE 8.2.C 
 > - Explain how changes in energy availability affect populations, communities, and ecosystems. 
 
 ### EK 8.2.C.1 
@@ -1241,7 +1266,9 @@ Changes in energy availability can result in changes in population size.
 ### EK 8.2.C.2 
 Changes in energy availability can result in disruptions to an ecosystem.
  - i) A change in energy resources such as sunlight can affect the number and size of the trophic levels. Trophic levels include producers; primary, secondary, tertiary, and quaternary consumers; and decomposers.
- - ii) A change in the biomass or number of producers in a given geographic area can affect the number and size of other trophic levels. 8.2.D 
+ - ii) A change in the biomass or number of producers in a given geographic area can affect the number and size of other trophic levels. 
+ 
+> LEARNING OBJECTIVE 8.2.D 
 > - Explain how the activities of autotrophs and heterotrophs enable the flow of energy within an ecosystem. 
 
 ### EK 8.2.D.1 
@@ -1264,11 +1291,13 @@ Populations comprise individual organisms of the same species that interact with
 
 ### EK 8.3.A.2 
 Many adaptations in organisms are related to obtaining and using energy and matter in a particular environment.
- - i) Population growth dynamics depend on birth rate, death rate, and population size. RELEVANT EQUATION Population Growth— dN dt = − B D where dt = chage in time B = birth rate D = death rate N = population size dN = change in population size ESSENTIAL KNOWLEDGE
- - ii) Reproduction without constraints results in the exponential growth of a population. RELEVANT EQUATION Exponential Growth— dN dt = r N max where dt = change in time N = population size dN = change in population size rmax = maximum per c apita growth rate of population 
+ - i) Population growth dynamics depend on birth rate, death rate, and population size.
+ 
+ Population Growth— dN dt = − B D where dt = chage in time B = birth rate D = death rate N = population size dN = change in population size
 
-> LEARNING OBJECTIVE 8.3.A 
-> - Describe factors that influence growth dynamics of populations. 
+ - ii) Reproduction without constraints results in the exponential growth of a population. 
+Exponential Growth— dN dt = r N max where dt = change in time N = population size dN = change in population size rmax = maximum per c apita growth rate of population 
+
  
 ## TOPIC 8.4 Effect of Density on Populations 
 

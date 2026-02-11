@@ -1,0 +1,25 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Render Notes (macros → styled markdown)",
+         "type": "shell",
+         "command": "python",
+         "args": [
+            "${workspaceFolder}/tools/render_macros.py",
+            "${file}",
+            "-o",
+            "${fileDirname}/${fileBasenameNoExtension}.rendered.md"
+         ],
+         "problemMatcher": [],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "presentation": {
+            "reveal": "never",
+            "panel": "dedicated"
+         }
+      }
+   ]
+}
